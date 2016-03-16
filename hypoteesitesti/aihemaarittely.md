@@ -9,5 +9,5 @@ Aluksi ohjelmaan tehdään t-testi. Myöhemmin myös ohjelmaa laajennetaan tekem
 1. Ohjelma kysyy aineistonkeruuseen liittyviä arvoja ja pyytää käyttäjää määrittämään nollahypoteesinsa
 2. Kohdan 1. voi myös ohittaa asettamalla ohjelma generoimaan arvot satunnaisesti.
 3. Ohjelma antaa muutaman vaihtoehdon yleisimmistä jakaumista (esim. pudotusvalikko), joista käyttäjä valitsee tutkimansa ilmiön jakauman
-4. Ohjelma laskee mm. testiin liittyvät p-arvot
+4. Ohjelma käy testin laskennallisen osuuden läpi (mm. p-arvot)
 5. Ohjelma lopuksi kertoo, millä merkitsevyystasoilla nollahypoteesi hylätään (0.01, 0.05 ja 0.1) ja onko esim. lantin harhattomuuden tapauksessa syytä epäillä, että lantti olisi harhainen.
