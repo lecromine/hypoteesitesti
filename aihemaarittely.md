@@ -5,7 +5,7 @@
 **Rakenne**
 
 1. Ohjelma pyytää aineistonkeruussa saatuja arvoja
-- Vaihtoehtoisesti voidaan asettaa ohjelma generoimaan arvot satunnaisesti
+  * Vaihtoehtoisesti voidaan asettaa ohjelma generoimaan arvot satunnaisesti
 2. Ohjelma kysyy käyttäjän nollahypoteesia ja mahdollista vastahypoteesia sekä antaa valikon, josta käyttäjä valitsee tutkimansa ilmiön jakauman. Valikossa on muutama yleisin jakauma.
 3. Ohjelma laskee testaukseen liittyvät arvot, kuten p-arvon
 4. Ohjelma kertoo käyttäjälle, millä merkitsevyystasoilla nollahypoteesi hylätään jos hylätään, eli kertoo, onko käyttäjän syytä epäillä esimerkiksi lantin harhattomuutta aineistonsa perusteella.
