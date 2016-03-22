@@ -7,6 +7,8 @@ import java.util.Scanner;
 public class main {
       public static void main(String[] args) {
           
+          // Käyttäjä syöttää aineistonsa ohjelmalle.
+          
           Scanner lukija = new Scanner(System.in);
           
           ArrayList<Integer> aineisto = new ArrayList<Integer>();
@@ -25,14 +27,14 @@ public class main {
               System.out.print(aineisto.get(i));
           }
           
+          // Ohjelma kysyy jakaumaa niin kauan, että käyttäjä syöttää hyväksyttävän arvon.
+          
           int jakauma = 0;
           while (jakauma == 0) {
             System.out.println("Valitse jakauma: ");
             System.out.println("binomi / normaali / poisson / eksponentti / tasainen / geometrinen / bernoulli");
             String jakaumanValinta = lukija.nextLine();
-          
-        
-          
+
             if (jakaumanValinta.equals("binomi")) jakauma = 1;
             else if (jakaumanValinta.equals("normaali")) jakauma = 2;
             else if (jakaumanValinta.equals("poisson")) jakauma = 3;
@@ -40,18 +42,27 @@ public class main {
             else if (jakaumanValinta.equals("tasainen")) jakauma = 5;
             else if (jakaumanValinta.equals("geometrinen")) jakauma = 6;
             else if (jakaumanValinta.equals("bernoulli")) jakauma = 7;
-            else System.out.println("Valitse jokin annetuista jakaumista.");
+            else System.out.println("Syote ei kelpaa. Valitse jokin annetuista jakaumista.");
           }
           
-          System.out.println("Valitse testi: ");
-          System.out.println("z-testi / t-testi");
-          String testiValinta = lukija.nextLine();
+          // Sama juttu testin kysymysessä.
+          
+          int testi = 0;
+          
+          while (testi == 0) {
+              System.out.println("Valitse testi: ");
+              System.out.println("z-testi / t-testi");
+              String testiValinta = lukija.nextLine();
+              
+              if (testiValinta.equals("z-testi")) testi = 1;
+              else if (testiValinta.equals("t-testi")) testi = 2;
+              else System.out.println("Syote ei kelpaa. Valitse jokin annetuista testeistä.");
+              
+          }
+
           
           
-          System.out.println("Onko testi yksisuuntainen vai kaksisuuntainen?");
-          
-          
-          // testi(aineisto, jakauma);
+          // testi(aineisto, jakauma, testi);
           
           
       }
