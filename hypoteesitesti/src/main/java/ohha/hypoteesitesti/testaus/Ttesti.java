@@ -1,14 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package ohha.hypoteesitesti.testaus;
 
-/**
- *
- * @author Lecromine
- */
+package ohha.hypoteesitesti.testaus;
+    
 public class Ttesti {
+    private double keskiarvo;
+    private double otosvarianssi;
+    
+    public Ttesti() {
+        
+    }
+    
+    public static void testisuure() {
+        
+    }
+   
+    
     
 }
