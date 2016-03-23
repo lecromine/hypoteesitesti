@@ -1,0 +1,1 @@
+![Luokkakaavio](/hypoteesitesti/dokumentointi/luokkakaavio.jpg "luokkakaavio")
