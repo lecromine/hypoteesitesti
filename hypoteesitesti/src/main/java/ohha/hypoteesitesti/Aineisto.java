@@ -2,10 +2,13 @@
 package ohha.hypoteesitesti;
 
 import java.util.ArrayList;
+import ohha.hypoteesitesti.jakaumaluokat.Binomi;
 
 public class Aineisto {
     private int jakauma;
     private ArrayList<Integer> satunnaismuuttujat;
+    
+    
     
     public Aineisto(int jakauma, ArrayList<Integer> satunnaismuuttujat) {
         this.jakauma = jakauma;
@@ -26,12 +29,5 @@ public class Aineisto {
     public ArrayList<Integer> getAineisto() {
         return satunnaismuuttujat;
     }
-    
-    public int ptnf() {
-        if (jakauma == 1) {
-            
-        }
-        return 0;
-    }
-    
+        
 }

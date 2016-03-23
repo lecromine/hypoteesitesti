@@ -19,7 +19,8 @@ public class AineistonSyottoLuokka {
           
           System.out.println("Aineiston tiedot.");
           System.out.println("Syötä aineisto ja lopuksi -1:");
-          int x = 0;
+          
+          int x;
           while (true) {
               
               x = Integer.parseInt(lukija.nextLine());
