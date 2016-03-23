@@ -1,14 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ohha.hypoteesitesti;
 
-/**
- *
- * @author Lecromine
- */
 public class Testaaja {
+    private Aineisto aineisto;
+    
+    public Testaaja(Aineisto aineisto) {
+        this.aineisto = aineisto;
+    }
+    
+    public static void maaritaJakauma(int jakaumaNumero) {
+        
+    }
+    
+    public static void maaritaTesti(int testiNumero) {
+        
+    }
+    
+    public static void teeTesti() {
+        
+    }
     
 }

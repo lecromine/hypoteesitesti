@@ -63,17 +63,19 @@ public class AineistonSyottoLuokka {
         Aineisto aineisto = new Aineisto(jakauma, aineistoLista);
 
         // Sama juttu testin kysymysessä.
-        int testi = 0;
+        int testi;
 
-        while (testi == 0) {
+        while (true) {
             System.out.println("Valitse testi: ");
             System.out.println("z-testi / t-testi");
             String testiValinta = lukija.nextLine();
 
             if (testiValinta.equals("z-testi")) {
                 testi = 1;
+                break;
             } else if (testiValinta.equals("t-testi")) {
                 testi = 2;
+                break;
             } else {
                 System.out.println("Syote ei kelpaa. Valitse jokin annetuista testeistä.");
             }
