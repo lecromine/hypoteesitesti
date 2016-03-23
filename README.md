@@ -1,3 +1,5 @@
-# hypoteesitesti
-Ohjelma testaa tilastollisia hypoteeseja arvoilla, jotka sille annetaan.
-Esim. t-testi ja normaalitesti.
+# Hypoteesitesti
+Ohjelma testaa tilastollisia hypoteeseja t- ja z-testeillä arvoilla, jotka sille annetaan. Toteutus sisältää tyypillisimpiä jakaumia ja niiden pistetodennäköisyys- tai tiheysfunktiot.
+
+* [Aiheen kuvaus](dokumentaatio/aiheenKuvausJaMaaritelma.md)
+* [Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
