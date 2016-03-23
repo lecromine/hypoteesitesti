@@ -5,15 +5,19 @@ public class Binomi {
     private double n;
     private double k;
     private double p;
+    private int jakaumaNumero;
 
     public Binomi(double n, double k, double p) {
         this.n = n;
         this.k = k;
         this.p = p;
+        this.jakaumaNumero = 1;
     }
 
     public double ptnf() {
-        if ( p < 0 || p > 1 || n < k) return -1;
+        if (p < 0 || p > 1 || n < k) {
+            return -1;
+        }
         return kombinaatio(n, k) * Math.pow(n, k) * Math.pow(1 - p, n - k);
     }
 
@@ -27,17 +31,21 @@ public class Binomi {
         }
         return i * permutaatio(i - 1);
     }
-    
+
     public double getn() {
         return this.n;
     }
-    
+
     public double getk() {
         return this.k;
     }
-    
+
     public double getp() {
         return this.p;
+    }
+
+    public int getjakaumaNumero() {
+        return this.jakaumaNumero;
     }
 
 }
