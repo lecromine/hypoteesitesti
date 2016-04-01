@@ -46,8 +46,14 @@ public class AineistonSyottoLuokkaTest {
     public void testAineistonSyottoOikein() {
         ArrayList<Integer> aineistoLista = new ArrayList<Integer>();
         Aineisto aineisto = new Aineisto(1, 1, aineistoLista);
-
         assertEquals("binomi", aineisto.getJakauma());
+
+    }
+
+    @Test
+    public void testAineistonSyottoOikeinKolme() {
+        ArrayList<Integer> aineistoLista = new ArrayList<Integer>();
+        Aineisto aineisto = new Aineisto(1, 1, aineistoLista);
         assertEquals("z-testi", aineisto.getTesti());
 
     }
@@ -56,8 +62,13 @@ public class AineistonSyottoLuokkaTest {
     public void testAineistonSyottoOikeinKaksi() {
         ArrayList<Integer> aineistoLista = new ArrayList<Integer>();
         Aineisto aineisto = new Aineisto(2, 4, aineistoLista);
-
         assertEquals("eksponentti", aineisto.getJakauma());
+    }
+
+    @Test
+    public void testAineistonSyottoOikeinNeljä() {
+        ArrayList<Integer> aineistoLista = new ArrayList<Integer>();
+        Aineisto aineisto = new Aineisto(2, 4, aineistoLista);
         assertEquals("t-testi", aineisto.getTesti());
     }
 

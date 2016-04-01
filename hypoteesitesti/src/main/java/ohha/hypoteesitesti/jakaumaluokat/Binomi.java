@@ -28,7 +28,7 @@ public class Binomi {
         return permutaatio(n) / (permutaatio(k) * permutaatio(n - k));
     }
 
-    public double permutaatio(double i) {        
+    public double permutaatio(double i) {
         if (i == 1) {
             return 1;
         }

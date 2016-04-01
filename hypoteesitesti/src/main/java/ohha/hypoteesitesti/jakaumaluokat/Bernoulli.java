@@ -10,7 +10,7 @@ package ohha.hypoteesitesti.jakaumaluokat;
  * @author Lecromine
  */
 public class Bernoulli {
-    
+
     private double n;
     private double p;
     private int jakaumaNumero;
@@ -25,7 +25,7 @@ public class Bernoulli {
         if (p < 0 || p > 1) {
             return -1;
         }
-        return Math.pow(p, n) * Math.pow(1-p,1-n);
+        return Math.pow(p, n) * Math.pow(1 - p, 1 - n);
     }
 
     public double getn() {

@@ -1,7 +1,7 @@
 package ohha.hypoteesitesti;
 
 import java.util.ArrayList;
-import ohha.hypoteesitesti.jakaumaluokat.Binomi;
+import ohha.hypoteesitesti.jakaumaluokat.JakaumanTyyppi;
 
 public class Aineisto {
 
@@ -9,7 +9,7 @@ public class Aineisto {
     private int jakauma;
 //    private double parametri;
 //    private double onnistumiset;
-    private Binomi binomi;
+    private JakaumanTyyppi tyyppi;
     private ArrayList<Integer> satunnaismuuttujat;
 
     public Aineisto(int testi, int jakauma, ArrayList<Integer> satunnaismuuttujat) {
@@ -25,7 +25,7 @@ public class Aineisto {
         }
         this.satunnaismuuttujat = satunnaismuuttujat;
     }
-    
+
     public String getJakauma() {
         if (jakauma == 1) {
             return "binomi";
@@ -45,9 +45,9 @@ public class Aineisto {
             return "Jakaumaa ei ole valittu";
         }
     }
-    
+
     public void jakaumanaBinomi() {
-        
+
     }
 
     public String getTesti() {
@@ -64,7 +64,7 @@ public class Aineisto {
         String sm = "";
         int i = 0;
         while (true) {
-            if (i < satunnaismuuttujat.size()-1) {
+            if (i < satunnaismuuttujat.size() - 1) {
                 sm = sm + satunnaismuuttujat.get(i) + ", ";
                 i++;
             } else {

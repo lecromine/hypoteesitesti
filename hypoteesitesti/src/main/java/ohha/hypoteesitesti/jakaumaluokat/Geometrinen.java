@@ -1,8 +1,7 @@
-
 package ohha.hypoteesitesti.jakaumaluokat;
 
-
 public class Geometrinen {
+
     private double k;
     private double p;
     private int jakaumaNumero;
@@ -14,10 +13,10 @@ public class Geometrinen {
     }
 
     public double ptnf() {
-        if (p < 0 || p > 1 ) {
+        if (p < 0 || p > 1) {
             return -1;
         }
-        return p * Math.pow(1-p, k);
+        return p * Math.pow(1 - p, k);
     }
 
     public double getk() {
@@ -33,4 +32,3 @@ public class Geometrinen {
     }
 
 }
-

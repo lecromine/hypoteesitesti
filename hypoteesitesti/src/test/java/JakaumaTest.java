@@ -39,26 +39,40 @@ public class JakaumaTest {
     }
 
     @Test
-    public void testBinomiJakaumanArvot() {
+
+    public void testBinomiJakaumanArvotYksi() {
+
+        Binomi binomi = new Binomi(100, 50, 0.5);
+
+        assertTrue(100 == binomi.getn());
+        assertTrue(50 == binomi.getk());
+        assertTrue(0.5 == binomi.getp());
+    }
+
+    @Test
+    public void testBinomiJakaumanPtnfYksi() {
 
         Binomi binomi = new Binomi(100, 50, 0.5);
 
         DecimalFormat df = new DecimalFormat("#.##");
 
-        assertTrue(100 == binomi.getn());
-        assertTrue(50 == binomi.getk());
-        assertTrue(0.5 == binomi.getp());
         assertEquals("0.08", df.format(binomi.ptnf()));
     }
 
+    @Test
     public void testBinomiJakaumanArvotKaksi() {
         Binomi binomi = new Binomi(1000, 990, 0.99);
-
-        DecimalFormat df = new DecimalFormat("#.##");
 
         assertTrue(1000 == binomi.getn());
         assertTrue(990 == binomi.getk());
         assertTrue(0.99 == binomi.getp());
+
+    }
+
+    @Test
+    public void testBinomiJakaumanPtnfKaksi() {
+        Binomi binomi = new Binomi(1000, 990, 0.99);
+        DecimalFormat df = new DecimalFormat("#.##");
         assertEquals("0.12", df.format(binomi.ptnf()));
     }
 }
