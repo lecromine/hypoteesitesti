@@ -26,12 +26,16 @@ public class AineistonSyottoLuokka {
             x = Integer.parseInt(lukija.nextLine());
             if (x == -1) {
                 break;
+            } if ( x >= 0) {
+                aineistoLista.add(x);
+            } else {
+                System.out.println("Syöte ei kelpaa. Syötä aineisto ja lopuksi -1:");
             }
-            aineistoLista.add(x);
+                
         }
 
         for (int i = 0; i < aineistoLista.size(); i++) {
-            System.out.print(aineistoLista.get(i));
+            System.out.println(aineistoLista.get(i));
         }
 
         // Ohjelma kysyy jakaumaa niin kauan, että käyttäjä syöttää hyväksyttävän arvon.
@@ -40,7 +44,8 @@ public class AineistonSyottoLuokka {
             System.out.println("Valitse jakauma: ");
             System.out.println("binomi / normaali / poisson / eksponentti / tasainen / geometrinen / bernoulli");
             String jakaumanValinta = lukija.nextLine();
-
+            
+                        
             if (jakaumanValinta.equals("binomi")) {
                 jakauma = 1;
             } else if (jakaumanValinta.equals("normaali")) {
@@ -59,8 +64,6 @@ public class AineistonSyottoLuokka {
                 System.out.println("Syote ei kelpaa. Valitse jokin annetuista jakaumista.");
             }
         }
-
-        Aineisto aineisto = new Aineisto(jakauma, aineistoLista);
 
         // Sama juttu testin kysymysessä.
         int testi;
@@ -81,7 +84,10 @@ public class AineistonSyottoLuokka {
             }
 
         }
-
+        
+        Aineisto aineisto = new Aineisto(testi, jakauma, aineistoLista);
+        System.out.println(aineisto.getJakauma());
+        
         return aineisto;
     }
 }

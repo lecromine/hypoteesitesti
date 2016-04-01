@@ -5,14 +5,27 @@ import ohha.hypoteesitesti.jakaumaluokat.Binomi;
 
 public class Aineisto {
 
+    private int testi;
     private int jakauma;
+//    private double parametri;
+//    private double onnistumiset;
+    private Binomi binomi;
     private ArrayList<Integer> satunnaismuuttujat;
 
-    public Aineisto(int jakauma, ArrayList<Integer> satunnaismuuttujat) {
-        this.jakauma = jakauma;
+    public Aineisto(int testi, int jakauma, ArrayList<Integer> satunnaismuuttujat) {
+
+        if (testi == 1 || testi == 2) {
+            this.testi = testi;
+        }
+        if (jakauma <= 7 && jakauma >= 1) {
+            this.jakauma = jakauma;
+            if (jakauma == 1) {
+                jakaumanaBinomi();
+            }
+        }
         this.satunnaismuuttujat = satunnaismuuttujat;
     }
-
+    
     public String getJakauma() {
         if (jakauma == 1) {
             return "binomi";
@@ -29,12 +42,38 @@ public class Aineisto {
         } else if (jakauma == 7) {
             return "bernoulli";
         } else {
-            return "Jakaumaa ei valittu";
+            return "Jakaumaa ei ole valittu";
+        }
+    }
+    
+    public void jakaumanaBinomi() {
+        
+    }
+
+    public String getTesti() {
+        if (testi == 1) {
+            return "z-testi";
+        } else if (testi == 2) {
+            return "t-testi";
+        } else {
+            return "Testiä ei ole valittu";
         }
     }
 
-    public ArrayList<Integer> getAineisto() {
-        return satunnaismuuttujat;
+    public String getAineisto() {
+        String sm = "";
+        int i = 0;
+        while (true) {
+            if (i < satunnaismuuttujat.size()-1) {
+                sm = sm + satunnaismuuttujat.get(i) + ", ";
+                i++;
+            } else {
+                sm = sm + satunnaismuuttujat.get(i);
+                break;
+            }
+        }
+
+        return sm;
     }
 
 }

@@ -11,4 +11,33 @@ package ohha.hypoteesitesti.jakaumaluokat;
  */
 public class Bernoulli {
     
+    private double n;
+    private double p;
+    private int jakaumaNumero;
+
+    public Bernoulli(double n, double p) {
+        this.n = n;
+        this.p = p;
+        this.jakaumaNumero = 7;
+    }
+
+    public double ptnf() {
+        if (p < 0 || p > 1) {
+            return -1;
+        }
+        return Math.pow(p, n) * Math.pow(1-p,1-n);
+    }
+
+    public double getn() {
+        return this.n;
+    }
+
+    public double getp() {
+        return this.p;
+    }
+
+    public int getjakaumaNumero() {
+        return this.jakaumaNumero;
+    }
+
 }

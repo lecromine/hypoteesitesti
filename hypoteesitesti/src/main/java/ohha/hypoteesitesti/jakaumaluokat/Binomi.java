@@ -1,5 +1,7 @@
 package ohha.hypoteesitesti.jakaumaluokat;
 
+import java.text.DecimalFormat;
+
 public class Binomi {
 
     private double n;
@@ -18,14 +20,15 @@ public class Binomi {
         if (p < 0 || p > 1 || n < k) {
             return -1;
         }
-        return kombinaatio(n, k) * Math.pow(n, k) * Math.pow(1 - p, n - k);
+
+        return kombinaatio(n, k) * Math.pow(p, k) * Math.pow(1 - p, n - k);
     }
 
     public double kombinaatio(double n, double k) {
         return permutaatio(n) / (permutaatio(k) * permutaatio(n - k));
     }
 
-    public double permutaatio(double i) {
+    public double permutaatio(double i) {        
         if (i == 1) {
             return 1;
         }
