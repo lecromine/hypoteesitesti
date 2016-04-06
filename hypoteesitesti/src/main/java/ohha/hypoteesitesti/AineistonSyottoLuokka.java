@@ -15,57 +15,20 @@ public class AineistonSyottoLuokka {
         // Käyttäjä syöttää aineistonsa ohjelmalle.
 
         Scanner lukija = new Scanner(System.in);
-        
+
         int jakauma = valitseJakauma();
-        
-        ArrayList<Integer> aineistoLista = new ArrayList<Integer>();
 
-        System.out.println("Aineiston tiedot.");
-        System.out.println("Syötä aineisto ja lopuksi -1:");
+        ArrayList<Integer> aineistoLista = syotaAineistoLista();
 
-        int x;
-        while (true) {
+//        for (int i = 0; i < aineistoLista.size(); i++) {
+//            System.out.println(aineistoLista.get(i));
+//        }
 
-            x = Integer.parseInt(lukija.nextLine());
-            if (x == -1) {
-                if (aineistoLista.isEmpty()) {
-                    System.out.println("Et syöttänyt yhtäkään arvoa aineistoosi. Ohjelma ei tulkitse tyhjiä aineistoja.");
-                }
-                break;
-            }
-            if (x >= 0) {
-                aineistoLista.add(x);
-            } else {
-                System.out.println("Syöte ei kelpaa. Syötä aineisto ja lopuksi -1:");
-            }
-
-        }
-
-        for (int i = 0; i < aineistoLista.size(); i++) {
-            System.out.println(aineistoLista.get(i));
-        }
+        int testi = valitseTesti();
 
         // Ohjelma kysyy jakaumaa niin kauan, että käyttäjä syöttää hyväksyttävän arvon.
         // Sama juttu testin kysymysessä.
-        int testi;
-
-        while (true) {
-            System.out.println("Valitse testi: ");
-            System.out.println("z-testi / t-testi");
-            String testiValinta = lukija.nextLine();
-
-            if (testiValinta.equals("z-testi")) {
-                testi = 1;
-                break;
-            } else if (testiValinta.equals("t-testi")) {
-                testi = 2;
-                break;
-            } else {
-                System.out.println("Syote ei kelpaa. Valitse jokin annetuista testeistä.");
-            }
-
-        }
-
+        
         Aineisto aineisto = new Aineisto(testi, jakauma, aineistoLista);
         System.out.println(aineisto.getJakauma());
 
@@ -99,7 +62,56 @@ public class AineistonSyottoLuokka {
                 System.out.println("Syote ei kelpaa. Valitse jokin annetuista jakaumista.");
             }
         }
-        
+
         return jakauma;
+    }
+
+    public static ArrayList syotaAineistoLista() {
+        Scanner lukija = new Scanner(System.in);
+        ArrayList<Integer> aineistoLista = new ArrayList<Integer>();
+
+        System.out.println("Aineiston tiedot.");
+        System.out.println("Syötä aineisto ja lopuksi -1:");
+        int x;
+        while (true) {
+
+            x = Integer.parseInt(lukija.nextLine());
+            if (x == -1) {
+                if (aineistoLista.isEmpty()) {
+                    System.out.println("Et syöttänyt yhtäkään arvoa aineistoosi. Ohjelma ei tulkitse tyhjiä aineistoja.");
+                }
+                break;
+            }
+            if (x >= 0) {
+                aineistoLista.add(x);
+            } else {
+                System.out.println("Syöte ei kelpaa. Syötä aineisto ja lopuksi -1:");
+            }
+
+        }
+        return aineistoLista;
+    }
+
+    public static int valitseTesti() {
+        Scanner lukija = new Scanner(System.in);
+        int testi;
+
+        while (true) {
+            System.out.println("Valitse testi: ");
+            System.out.println("z-testi / t-testi");
+            String testiValinta = lukija.nextLine();
+
+            if (testiValinta.equals("z-testi")) {
+                testi = 1;
+                break;
+            } else if (testiValinta.equals("t-testi")) {
+                testi = 2;
+                break;
+            } else {
+                System.out.println("Syote ei kelpaa. Valitse jokin annetuista testeistä.");
+            }
+
+        }
+        return testi;
     }
 }
