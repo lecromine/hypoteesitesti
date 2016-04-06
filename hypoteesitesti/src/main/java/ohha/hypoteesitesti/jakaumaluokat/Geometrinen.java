@@ -2,11 +2,11 @@ package ohha.hypoteesitesti.jakaumaluokat;
 
 public class Geometrinen {
 
-    private double k;
+    private int k;
     private double p;
     private int jakaumaNumero;
 
-    public Geometrinen(double k, double p) {
+    public Geometrinen(int k, double p) {
         this.k = k;
         this.p = p;
         this.jakaumaNumero = 6;

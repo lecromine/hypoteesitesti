@@ -2,9 +2,7 @@ package ohha.hypoteesitesti.jakaumaluokat;
 
 public class JakaumanTyyppi {
 
-    private Binomi binomi;
-    private Geometrinen geometrinen;
-    private Bernoulli bernoulli;
+
 
     private Normaali normaali;
     private Tasainen tasainen;
@@ -21,6 +19,7 @@ public class JakaumanTyyppi {
             this.jatkuva = true;
         }
     }
+    
 
     public boolean onkoDiskreetti() {
         if (diskreetti == true) {

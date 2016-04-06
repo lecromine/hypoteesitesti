@@ -11,11 +11,11 @@ package ohha.hypoteesitesti.jakaumaluokat;
  */
 public class Bernoulli {
 
-    private double n;
+    private int n;
     private double p;
     private int jakaumaNumero;
 
-    public Bernoulli(double n, double p) {
+    public Bernoulli(int n, double p) {
         this.n = n;
         this.p = p;
         this.jakaumaNumero = 7;

@@ -12,16 +12,22 @@ public class Main {
         // KÃ¤yttÃ¤jÃ¤ syÃ¶ttÃ¤Ã¤ aineiston ohjelmalle. TÃ¤mÃ¤ erillisenÃ¤ luokkana selvyyden vuoksi. 
         // System.out.println(AineistonSyottoLuokka.syotaAineisto().getAineisto());
         
-        Binomi binomi = new Binomi(100, 50, 0.5);
+        DiskreettiAineisto diskreettiaineisto = new DiskreettiAineisto(100, 50, 0.5, 1, 1);
+        Testaaja testaaja = new Testaaja(diskreettiaineisto);
         
-        AineistonSyottoLuokka.syotaAineisto();
-
-        System.out.println(binomi.getn());
-
+        testaaja.teeTesti();
 
         
-        System.out.println(binomi.ptnf());
+//        Binomi binomi = new Binomi(100, 50, 0.5);
+        
+//        AineistonSyottoLuokka.syotaAineisto();
 
+//        System.out.println(binomi.getn());
+
+        
+        
+//        System.out.println(binomi.ptnf());
+        
         // testi(aineisto, jakauma, testi);
     }
 }

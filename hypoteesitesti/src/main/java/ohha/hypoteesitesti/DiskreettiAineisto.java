@@ -1,15 +1,24 @@
 package ohha.hypoteesitesti;
 
 import java.util.ArrayList;
+import ohha.hypoteesitesti.jakaumaluokat.Bernoulli;
+import ohha.hypoteesitesti.jakaumaluokat.Binomi;
+import ohha.hypoteesitesti.jakaumaluokat.Geometrinen;
 import ohha.hypoteesitesti.jakaumaluokat.JakaumanTyyppi;
 
 public class DiskreettiAineisto {
 
+    public Binomi binomi;
+    public Geometrinen geometrinen;
+    public Bernoulli bernoulli;
+
     private int testi;
     private int jakauma;
+    
     private double p;
     private int k;
     private int n;
+    
     private JakaumanTyyppi tyyppi;
 
     public DiskreettiAineisto(int n, int k, double p, int testi, int jakauma) {
@@ -18,13 +27,43 @@ public class DiskreettiAineisto {
             this.testi = testi;
         }
         
+        this.jakauma = jakauma;
+        this.testi = testi;
         this.p = p;
         this.k = k;
         this.n = n;
-        
+
+        if (jakauma == 1) {
+            this.binomi = new Binomi(n, k, p);
+        } else if (jakauma == 6) {
+            this.bernoulli = new Bernoulli(n, p);
+        } else if (jakauma == 7) {
+            this.geometrinen = new Geometrinen(k, p);
+        }
+
     }
 
-    public String getJakauma() {
+    //////////////////////////////////////////////////////////////////
+    // get-metodit
+    /////////////////////////////////////////////////////////////////////
+    
+    public int getJakauma() {
+        return jakauma;
+    }
+    
+    public int getn() {
+        return n;
+    }
+    
+    public int getk() {
+        return k;
+    }
+    
+    public double getp() {
+        return p;
+    }
+    
+    public String getJakaumanNimi() {
         if (jakauma == 1) {
             return "binomi";
         } else if (jakauma == 2) {
@@ -44,10 +83,6 @@ public class DiskreettiAineisto {
         }
     }
 
-    public void jakaumanaBinomi() {
-
-    }
-
     public String getTesti() {
         if (testi == 1) {
             return "z-testi";
@@ -57,6 +92,5 @@ public class DiskreettiAineisto {
             return "Testiä ei ole valittu";
         }
     }
-
 
 }

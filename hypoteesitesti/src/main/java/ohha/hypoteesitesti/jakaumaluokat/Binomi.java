@@ -4,12 +4,12 @@ import java.text.DecimalFormat;
 
 public class Binomi {
 
-    private double n;
-    private double k;
+    private int n;
+    private int k;
     private double p;
     private int jakaumaNumero;
 
-    public Binomi(double n, double k, double p) {
+    public Binomi(int n, int k, double p) {
         this.n = n;
         this.k = k;
         this.p = p;
