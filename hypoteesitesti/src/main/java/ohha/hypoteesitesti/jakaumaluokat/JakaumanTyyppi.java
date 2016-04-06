@@ -20,10 +20,10 @@ public class JakaumanTyyppi {
     }
 
     public void diskreetti(int jakauma) {
-
+        
     }
 
     public void jatkuva(int jakauma) {
-
+        
     }
 }

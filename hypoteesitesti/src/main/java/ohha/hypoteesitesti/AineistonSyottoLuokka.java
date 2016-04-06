@@ -15,33 +15,9 @@ public class AineistonSyottoLuokka {
         // Käyttäjä syöttää aineistonsa ohjelmalle.
 
         Scanner lukija = new Scanner(System.in);
-
-        int jakauma = 0;
-        while (jakauma == 0) {
-            System.out.println("Valitse jakauma: ");
-            System.out.println("binomi / normaali / poisson / eksponentti / tasainen / geometrinen / bernoulli");
-            String jakaumanValinta = lukija.nextLine();
-
-            if (jakaumanValinta.equals("binomi")) {
-                jakauma = 1;
-                JakaumanTyyppi jakaumantyyppi = new JakaumanTyyppi(1);
-            } else if (jakaumanValinta.equals("normaali")) {
-                jakauma = 2;
-            } else if (jakaumanValinta.equals("poisson")) {
-                jakauma = 3;
-            } else if (jakaumanValinta.equals("eksponentti")) {
-                jakauma = 4;
-            } else if (jakaumanValinta.equals("tasainen")) {
-                jakauma = 5;
-            } else if (jakaumanValinta.equals("geometrinen")) {
-                jakauma = 6;
-            } else if (jakaumanValinta.equals("bernoulli")) {
-                jakauma = 7;
-            } else {
-                System.out.println("Syote ei kelpaa. Valitse jokin annetuista jakaumista.");
-            }
-        }
-
+        
+        int jakauma = valitseJakauma();
+        
         ArrayList<Integer> aineistoLista = new ArrayList<Integer>();
 
         System.out.println("Aineiston tiedot.");
@@ -94,5 +70,36 @@ public class AineistonSyottoLuokka {
         System.out.println(aineisto.getJakauma());
 
         return aineisto;
+    }
+
+    public static int valitseJakauma() {
+        Scanner lukija = new Scanner(System.in);
+        int jakauma = 0;
+        while (jakauma == 0) {
+            System.out.println("Valitse jakauma: ");
+            System.out.println("binomi / normaali / poisson / eksponentti / tasainen / geometrinen / bernoulli");
+            String jakaumanValinta = lukija.nextLine();
+
+            if (jakaumanValinta.equals("binomi")) {
+                jakauma = 1;
+                JakaumanTyyppi jakaumantyyppi = new JakaumanTyyppi(1);
+            } else if (jakaumanValinta.equals("normaali")) {
+                jakauma = 2;
+            } else if (jakaumanValinta.equals("poisson")) {
+                jakauma = 3;
+            } else if (jakaumanValinta.equals("eksponentti")) {
+                jakauma = 4;
+            } else if (jakaumanValinta.equals("tasainen")) {
+                jakauma = 5;
+            } else if (jakaumanValinta.equals("geometrinen")) {
+                jakauma = 6;
+            } else if (jakaumanValinta.equals("bernoulli")) {
+                jakauma = 7;
+            } else {
+                System.out.println("Syote ei kelpaa. Valitse jokin annetuista jakaumista.");
+            }
+        }
+        
+        return jakauma;
     }
 }
