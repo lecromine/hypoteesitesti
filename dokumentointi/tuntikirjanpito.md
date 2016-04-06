@@ -6,3 +6,4 @@ Päivä | Tunnit | Kuvaus
 22.03.2016 | 2h | Koodaamisen aloittaminen
 23.03.2016 | 2h | Luokkakaavio, Readme-tiedoston päivitys, koodin muokkaamista
 01.04.2016 | 3h | Koodaamista, checkstyle-raportti
+06.04.2016 | 4h | Koodaamista; testauslogiikan rakentamista
