@@ -2,9 +2,9 @@
 package ohha.hypoteesitesti;
 
 public class Testaaja {
-    private Aineisto aineisto;
+    private JatkuvaAineisto aineisto;
     
-    public Testaaja(Aineisto aineisto) {
+    public Testaaja(JatkuvaAineisto aineisto) {
         this.aineisto = aineisto;
     }
     

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ohha.hypoteesitesti;
 
 import java.util.ArrayList;
@@ -11,28 +6,33 @@ import ohha.hypoteesitesti.jakaumaluokat.JakaumanTyyppi;
 
 public class AineistonSyottoLuokka {
 
-    public static Aineisto syotaAineisto() {
+    public static void syotaAineisto() {
         // Käyttäjä syöttää aineistonsa ohjelmalle.
 
         Scanner lukija = new Scanner(System.in);
 
         int jakauma = valitseJakauma();
 
-        ArrayList<Integer> aineistoLista = syotaAineistoLista();
+        JakaumanTyyppi jakaumantyyppi = new JakaumanTyyppi(jakauma);
+
+        int testi = valitseTesti();
+        
+        
+        if (jakaumantyyppi.onkoDiskreetti() == true) {
+            syotaDiskreettiAineisto(testi, jakauma);
+        } else if (jakaumantyyppi.onkoJatkuva() == true) {
+            syotaJatkuvaAineisto(testi, jakauma);
+        } else {
+            System.out.println("Jotain meni vikaan. Aineisto ei ole diskreetti eikä jatkuva.");
+        }
 
 //        for (int i = 0; i < aineistoLista.size(); i++) {
 //            System.out.println(aineistoLista.get(i));
 //        }
-
-        int testi = valitseTesti();
-
         // Ohjelma kysyy jakaumaa niin kauan, että käyttäjä syöttää hyväksyttävän arvon.
         // Sama juttu testin kysymysessä.
-        
-        Aineisto aineisto = new Aineisto(testi, jakauma, aineistoLista);
-        System.out.println(aineisto.getJakauma());
+//        System.out.println(aineisto.getJakauma());
 
-        return aineisto;
     }
 
     public static int valitseJakauma() {
@@ -45,7 +45,6 @@ public class AineistonSyottoLuokka {
 
             if (jakaumanValinta.equals("binomi")) {
                 jakauma = 1;
-                JakaumanTyyppi jakaumantyyppi = new JakaumanTyyppi(1);
             } else if (jakaumanValinta.equals("normaali")) {
                 jakauma = 2;
             } else if (jakaumanValinta.equals("poisson")) {
@@ -61,18 +60,43 @@ public class AineistonSyottoLuokka {
             } else {
                 System.out.println("Syote ei kelpaa. Valitse jokin annetuista jakaumista.");
             }
+
         }
 
         return jakauma;
     }
 
-    public static ArrayList syotaAineistoLista() {
+    public static void syotaDiskreettiAineisto(int testi, int jakauma) {
+        Scanner lukija = new Scanner(System.in);
+        
+        // metodi kysyy aineiston arvot:
+
+        System.out.println("Aineiston tiedot.");
+        System.out.println("Syötä aineisto:");
+
+        System.out.print("Aineiston koko n: ");
+        int n = Integer.parseInt(lukija.nextLine());
+
+        System.out.print("Onnistumisten lukumäärä k: ");
+        int k = Integer.parseInt(lukija.nextLine());
+
+        System.out.print("Yksittäisen onnistumisen todennäköisyys p: ");
+        double p = Integer.parseInt(lukija.nextLine());
+        
+        DiskreettiAineisto diskreettiaineisto = new DiskreettiAineisto(n, k, p, testi, jakauma);
+        
+    }
+
+    public static JatkuvaAineisto syotaJatkuvaAineisto(int testi, int jakauma) {
         Scanner lukija = new Scanner(System.in);
         ArrayList<Integer> aineistoLista = new ArrayList<Integer>();
 
         System.out.println("Aineiston tiedot.");
         System.out.println("Syötä aineisto ja lopuksi -1:");
         int x;
+        
+        // Metodi kysyy aineiston satunnaismuuttujia vastaavia arvoja:
+        
         while (true) {
 
             x = Integer.parseInt(lukija.nextLine());
@@ -89,7 +113,10 @@ public class AineistonSyottoLuokka {
             }
 
         }
-        return aineistoLista;
+        
+        JatkuvaAineisto aineisto = new JatkuvaAineisto(testi, jakauma, aineistoLista);
+        
+        return aineisto;
     }
 
     public static int valitseTesti() {

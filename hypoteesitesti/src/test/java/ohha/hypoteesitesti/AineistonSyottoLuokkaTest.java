@@ -45,7 +45,7 @@ public class AineistonSyottoLuokkaTest {
     @Test
     public void testAineistonSyottoOikein() {
         ArrayList<Integer> aineistoLista = new ArrayList<Integer>();
-        Aineisto aineisto = new Aineisto(1, 1, aineistoLista);
+        JatkuvaAineisto aineisto = new JatkuvaAineisto(1, 1, aineistoLista);
         assertEquals("binomi", aineisto.getJakauma());
 
     }
@@ -53,7 +53,7 @@ public class AineistonSyottoLuokkaTest {
     @Test
     public void testAineistonSyottoOikeinKolme() {
         ArrayList<Integer> aineistoLista = new ArrayList<Integer>();
-        Aineisto aineisto = new Aineisto(1, 1, aineistoLista);
+        JatkuvaAineisto aineisto = new JatkuvaAineisto(1, 1, aineistoLista);
         assertEquals("z-testi", aineisto.getTesti());
 
     }
@@ -61,14 +61,14 @@ public class AineistonSyottoLuokkaTest {
     @Test
     public void testAineistonSyottoOikeinKaksi() {
         ArrayList<Integer> aineistoLista = new ArrayList<Integer>();
-        Aineisto aineisto = new Aineisto(2, 4, aineistoLista);
+        JatkuvaAineisto aineisto = new JatkuvaAineisto(2, 4, aineistoLista);
         assertEquals("eksponentti", aineisto.getJakauma());
     }
 
     @Test
     public void testAineistonSyottoOikeinNeljä() {
         ArrayList<Integer> aineistoLista = new ArrayList<Integer>();
-        Aineisto aineisto = new Aineisto(2, 4, aineistoLista);
+        JatkuvaAineisto aineisto = new JatkuvaAineisto(2, 4, aineistoLista);
         assertEquals("t-testi", aineisto.getTesti());
     }
 
@@ -82,7 +82,7 @@ public class AineistonSyottoLuokkaTest {
         aineistoLista.add(200);
         aineistoLista.add(39);
 
-        Aineisto aineisto = new Aineisto(1, 1, aineistoLista);
+        JatkuvaAineisto aineisto = new JatkuvaAineisto(1, 1, aineistoLista);
 
         assertEquals("1, 50, 4, 200, 39", aineisto.getAineisto());
     }
@@ -90,7 +90,7 @@ public class AineistonSyottoLuokkaTest {
     @Test
     public void testAineistonSyottoVirheellisesti() {
         ArrayList<Integer> aineistoLista = new ArrayList<Integer>();
-        Aineisto aineisto = new Aineisto(-3, 40, aineistoLista);
+        JatkuvaAineisto aineisto = new JatkuvaAineisto(-3, 40, aineistoLista);
 
         assertEquals("Jakaumaa ei ole valittu", aineisto.getJakauma());
         assertEquals("Testiä ei ole valittu", aineisto.getTesti());

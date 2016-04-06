@@ -3,27 +3,25 @@ package ohha.hypoteesitesti;
 import java.util.ArrayList;
 import ohha.hypoteesitesti.jakaumaluokat.JakaumanTyyppi;
 
-public class Aineisto {
+public class DiskreettiAineisto {
 
     private int testi;
     private int jakauma;
-//    private double parametri;
-//    private double onnistumiset;
+    private double p;
+    private int k;
+    private int n;
     private JakaumanTyyppi tyyppi;
-    private ArrayList<Integer> satunnaismuuttujat;
 
-    public Aineisto(int testi, int jakauma, ArrayList<Integer> satunnaismuuttujat) {
+    public DiskreettiAineisto(int n, int k, double p, int testi, int jakauma) {
 
         if (testi == 1 || testi == 2) {
             this.testi = testi;
         }
-        if (jakauma <= 7 && jakauma >= 1) {
-            this.jakauma = jakauma;
-            if (jakauma == 1) {
-                jakaumanaBinomi();
-            }
-        }
-        this.satunnaismuuttujat = satunnaismuuttujat;
+        
+        this.p = p;
+        this.k = k;
+        this.n = n;
+        
     }
 
     public String getJakauma() {
@@ -60,20 +58,5 @@ public class Aineisto {
         }
     }
 
-    public String getAineisto() {
-        String sm = "";
-        int i = 0;
-        while (true) {
-            if (i < satunnaismuuttujat.size() - 1) {
-                sm = sm + satunnaismuuttujat.get(i) + ", ";
-                i++;
-            } else {
-                sm = sm + satunnaismuuttujat.get(i);
-                break;
-            }
-        }
-
-        return sm;
-    }
 
 }

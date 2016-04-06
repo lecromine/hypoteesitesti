@@ -11,6 +11,7 @@ public class Main {
 
         // KÃ¤yttÃ¤jÃ¤ syÃ¶ttÃ¤Ã¤ aineiston ohjelmalle. TÃ¤mÃ¤ erillisenÃ¤ luokkana selvyyden vuoksi. 
         // System.out.println(AineistonSyottoLuokka.syotaAineisto().getAineisto());
+        
         Binomi binomi = new Binomi(100, 50, 0.5);
         
         AineistonSyottoLuokka.syotaAineisto();

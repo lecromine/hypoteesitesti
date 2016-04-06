@@ -11,19 +11,30 @@ public class JakaumanTyyppi {
     private Poisson poisson;
     private Eksponentti eksponentti;
 
+    private boolean diskreetti;
+    private boolean jatkuva;
+
     public JakaumanTyyppi(int jakauma) {
         if (jakauma == 1 || jakauma == 6 || jakauma == 7) {
-            diskreetti(jakauma);
+            this.diskreetti = true;
         } else if (jakauma == 2 || jakauma == 3 || jakauma == 4 || jakauma == 5) {
-            jatkuva(jakauma);
+            this.jatkuva = true;
         }
     }
 
-    public void diskreetti(int jakauma) {
-        
+    public boolean onkoDiskreetti() {
+        if (diskreetti == true) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public void jatkuva(int jakauma) {
-        
+    public boolean onkoJatkuva() {
+        if (jatkuva == true) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
