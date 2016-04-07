@@ -56,7 +56,7 @@ public class JakaumaTest {
 
         DecimalFormat df = new DecimalFormat("#.##");
 
-        assertEquals("0.08", df.format(binomi.ptnf()));
+        assertEquals("0.08", df.format(binomi.ptnf(100, 50, 0.5)));
     }
 
     @Test
@@ -73,6 +73,6 @@ public class JakaumaTest {
     public void testBinomiJakaumanPtnfKaksi() {
         Binomi binomi = new Binomi(1000, 990, 0.99);
         DecimalFormat df = new DecimalFormat("#.##");
-        assertEquals("0.12", df.format(binomi.ptnf()));
+        assertEquals("0.12", df.format(binomi.ptnf(1000, 990, 0.99)));
     }
 }

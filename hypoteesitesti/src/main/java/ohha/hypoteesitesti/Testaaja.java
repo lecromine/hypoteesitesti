@@ -1,5 +1,7 @@
 package ohha.hypoteesitesti;
 
+import java.text.DecimalFormat;
+
 public class Testaaja {
 
     private DiskreettiAineisto diskreettiaineisto;
@@ -19,13 +21,22 @@ public class Testaaja {
     }
 
     public void binomiTesti() {
-
-        double nollahypoteesi = 0.5;
+        
+        // yksisuuntainen asetelma H0: p = p0; H1: p > p0
+        
+                
+    }
+    
+    public void binomiTestiKaksiSuuntainen() {
+        
+        DecimalFormat df = new DecimalFormat("##.#####");
+        
+        double nollahypoteesi = 0.7;
         double testisuure;
         double p_arvo = 0;
 
-        int k = 50;
-        double n = 120;
+        int k = 90;
+        int n = 120;
         double p = nollahypoteesi;
 
 //        int k = diskreettiaineisto.getk();
@@ -37,21 +48,25 @@ public class Testaaja {
         // E(K) = n/2 -> nollahypoteesin kannalta kriittisiä ovat n/2 suuresti poikkeavat arvot
         // eli | k - n/2 | on suurta
         // p = P{ | K - n/2 | >= | k - n/2 | } = P{ K <= n/2 - | k - n/2 | } + P{K >= n/2 + | k - n/2 | }
-          
         int alaraja = (int) (n * p - Math.abs(k - n * p));
         int ylaraja = (int) (n * p + Math.abs(k - n * p));
 
-        System.out.println(ylaraja + " + " + alaraja);
+        System.out.println("[" + alaraja + ", " + ylaraja + "]");
 
-        // Aluksi tutkitaan merkitsevyystaso a = 0.05
-        
-        if (p_arvo < 0.05) {
-            // aineisto todistaa nollahypoteesia vastaan
-        } else {
-            // Aineisto ei todista nollahypoteesia vastaan
+        for (int i = 0; i <= alaraja; i++) {
+            p_arvo = p_arvo + diskreettiaineisto.binomi.ptnf(n, i, p);
         }
 
-        System.out.println("ptnf " + diskreettiaineisto.binomi.ptnf());
+        for (int i = ylaraja; i < n; i++) {
+            p_arvo = p_arvo + diskreettiaineisto.binomi.ptnf(n, i, p);
+        }
+
+        // Aluksi tutkitaan merkitsevyystaso a = 0.05
+        if (p_arvo < 0.05) {
+            System.out.println("p-arvoksi saadaan " + df.format(p_arvo) + " < 0.05, joten nollahypoteesi hylätään merkitsevyystasolla 0.05");
+        } else {
+            System.out.println("p-arvoksi saadaan " + df.format(p_arvo) + " > 0.05, joten nollahypoteesi hyväksytään merkitsevyystasolla 0.05");
+        }
 
     }
 
