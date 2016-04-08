@@ -10,71 +10,77 @@ public class Testaaja {
         this.diskreettiaineisto = diskreettiaineisto;
     }
 
-    public void teeTesti() {
+    public void teeTesti(int n, int k, double p, int suunta) {
         if (diskreettiaineisto.getJakauma() == 1) {
-            binomiTesti();
+            binomiTesti(n, k, p, suunta);
         } else if (diskreettiaineisto.getJakauma() == 6) {
-            bernoulliTesti();
+            bernoulliTesti(n, p);
         } else if (diskreettiaineisto.getJakauma() == 7) {
-            geometrinenTesti();
+            geometrinenTesti(n, p);
         }
     }
 
-    public void binomiTesti() {
-        
-        // yksisuuntainen asetelma H0: p = p0; H1: p > p0
-        
-                
-    }
-    
-    public void binomiTestiKaksiSuuntainen() {
-        
-        DecimalFormat df = new DecimalFormat("##.#####");
-        
-        double nollahypoteesi = 0.7;
-        double testisuure;
-        double p_arvo = 0;
+    public void binomiTesti(int n, int k, double p, int suunta) {
 
-        int k = 90;
-        int n = 120;
-        double p = nollahypoteesi;
+        // kaksisuuntainen asetelma H0: p = p0
+        DecimalFormat df = new DecimalFormat("##.#####");
+
+        double p_arvo = 0;
+        int alaraja = 0;
+        int ylaraja = 0;
 
 //        int k = diskreettiaineisto.getk();
 //        int n = diskreettiaineisto.getn();
 //        double p = diskreettiaineisto.getp();
-        // lantin harhattomuus: nollahypoteesi H väittää, että onnistumistn p = 0.5
-        // aineisto: n heittoa, k onnistumista
-        // tukeeko aineisto nollahypoteesia H?
-        // E(K) = n/2 -> nollahypoteesin kannalta kriittisiä ovat n/2 suuresti poikkeavat arvot
-        // eli | k - n/2 | on suurta
-        // p = P{ | K - n/2 | >= | k - n/2 | } = P{ K <= n/2 - | k - n/2 | } + P{K >= n/2 + | k - n/2 | }
-        int alaraja = (int) (n * p - Math.abs(k - n * p));
-        int ylaraja = (int) (n * p + Math.abs(k - n * p));
+//        lantin harhattomuus: nollahypoteesi H väittää, että onnistumistn p = 0.5
+//        aineisto: n heittoa, k onnistumista
+//        tukeeko aineisto nollahypoteesia H?
+//        E(K) = n/2 -> nollahypoteesin kannalta kriittisiä ovat n/2 suuresti poikkeavat arvot
+//        eli | k - n/2 | on suurta
+//        p = P{ | K - n/2 | >= | k - n/2 | } = P{ K <= n/2 - | k - n/2 | } + P{K >= n/2 + | k - n/2 | }
+//
+        if (suunta == 1 || suunta == 3) {
+            alaraja = (int) (n * p - Math.abs(k - n * p));
+            for (int i = 0; i <= alaraja; i++) {
+                p_arvo = p_arvo + diskreettiaineisto.binomi.ptnf(n, i, p);
+            }
+
+        }
+
+        if (suunta == 2 || suunta == 3) {
+            ylaraja = (int) (n * p + Math.abs(k - n * p));
+
+            for (int i = ylaraja; i <= n; i++) {
+                p_arvo = p_arvo + diskreettiaineisto.binomi.ptnf(n, i, p);
+            }
+        }
 
         System.out.println("[" + alaraja + ", " + ylaraja + "]");
 
-        for (int i = 0; i <= alaraja; i++) {
-            p_arvo = p_arvo + diskreettiaineisto.binomi.ptnf(n, i, p);
-        }
-
-        for (int i = ylaraja; i < n; i++) {
-            p_arvo = p_arvo + diskreettiaineisto.binomi.ptnf(n, i, p);
-        }
-
         // Aluksi tutkitaan merkitsevyystaso a = 0.05
-        if (p_arvo < 0.05) {
-            System.out.println("p-arvoksi saadaan " + df.format(p_arvo) + " < 0.05, joten nollahypoteesi hylätään merkitsevyystasolla 0.05");
-        } else {
-            System.out.println("p-arvoksi saadaan " + df.format(p_arvo) + " > 0.05, joten nollahypoteesi hyväksytään merkitsevyystasolla 0.05");
+        if (p_arvo < 0.1) {
+            if (p_arvo < 0.05) {
+                if (p_arvo < 0.01 ) {
+                    System.out.println("p-arvoksi saadaan " + df.format(p_arvo) + " < 0.01, joten nollahypoteesi hylätään merkitsevyystasolla 0.01");
+                } else if (p_arvo > 0.01) {
+                    System.out.println("p-arvoksi saadaan 0.01 < " + df.format(p_arvo) + " < 0.05, joten nollahypoteesi hylätään merkitsevyystasolla 0.01 mutta hyväksytään tasolla 0.05");
+                }
+            } else {
+                System.out.println("p-arvoksi saadaan 0.05 < " + df.format(p_arvo) + " < 0.1, joten nollahypoteesi hylätään merkitsevyystasolla 0.05 mutta hyväksytään tasolla 0.1");
+                
+            }
+            
+        } else if (p_arvo > 0.1) {
+            System.out.println("p-arvoksi saadaan " + df.format(p_arvo) + " > 0.1, joten nollahypoteesi hyväksytään merkitsevyystasolla 0.1");
         }
 
     }
 
-    public void bernoulliTesti() {
+    public void bernoulliTesti(int n, double p) {
 
     }
 
-    public void geometrinenTesti() {
+    public void geometrinenTesti(int n, double p) {
 
     }
 

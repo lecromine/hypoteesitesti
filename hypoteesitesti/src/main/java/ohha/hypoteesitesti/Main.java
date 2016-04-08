@@ -15,7 +15,9 @@ public class Main {
         DiskreettiAineisto diskreettiaineisto = new DiskreettiAineisto(100, 50, 0.5, 1, 1);
         Testaaja testaaja = new Testaaja(diskreettiaineisto);
         
-        testaaja.teeTesti();
+        // suunta: 1 = alaspäin, 2 = ylöspäin, 3 = kaksisuuntainen
+        
+        testaaja.teeTesti(100, 60, 0.5, 1);
 
         
 //        Binomi binomi = new Binomi(100, 50, 0.5);
