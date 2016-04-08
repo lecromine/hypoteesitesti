@@ -26,12 +26,12 @@ public class Testaaja {
         DecimalFormat df = new DecimalFormat("##.#####");
 
         double p_arvo = 0;
-        int alaraja = 0;
-        int ylaraja = 0;
+        int alaraja = 0; // kriittinen alue: [0, alaraja]
+        int ylaraja = 0; // kriittinen alue: [ylaraja, n]
+        
+        // nollahypoteesin kannalta suotuisa alue: [alaraja, yläraja]
 
-//        int k = diskreettiaineisto.getk();
-//        int n = diskreettiaineisto.getn();
-//        double p = diskreettiaineisto.getp();
+        // suunta: 1 = alas, 2 = ylös, 3 = kaksisuuntainen
 //        lantin harhattomuus: nollahypoteesi H väittää, että onnistumistn p = 0.5
 //        aineisto: n heittoa, k onnistumista
 //        tukeeko aineisto nollahypoteesia H?
@@ -39,7 +39,8 @@ public class Testaaja {
 //        eli | k - n/2 | on suurta
 //        p = P{ | K - n/2 | >= | k - n/2 | } = P{ K <= n/2 - | k - n/2 | } + P{K >= n/2 + | k - n/2 | }
 //
-        if (suunta == 1 || suunta == 3) {
+        if (suunta == 1 || suunta == 3) { // kriittinen alue joko [0, alaraja] ja/tai [ylaraja, n]
+             
             alaraja = (int) (n * p - Math.abs(k - n * p));
             for (int i = 0; i <= alaraja; i++) {
                 p_arvo = p_arvo + diskreettiaineisto.binomi.ptnf(n, i, p);
@@ -47,7 +48,7 @@ public class Testaaja {
 
         }
 
-        if (suunta == 2 || suunta == 3) {
+        if (suunta == 2 || suunta == 3) { // kriittinen alue joko [ylaraja, n] ja/tai [0, alaraja]
             ylaraja = (int) (n * p + Math.abs(k - n * p));
 
             for (int i = ylaraja; i <= n; i++) {
@@ -55,7 +56,7 @@ public class Testaaja {
             }
         }
 
-        System.out.println("[" + alaraja + ", " + ylaraja + "]");
+//        System.out.println("[" + alaraja + ", " + ylaraja + "]");
 
         // Aluksi tutkitaan merkitsevyystaso a = 0.05
         if (p_arvo < 0.1) {

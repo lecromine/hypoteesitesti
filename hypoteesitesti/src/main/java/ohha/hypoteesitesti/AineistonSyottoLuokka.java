@@ -6,42 +6,39 @@ import ohha.hypoteesitesti.jakaumaluokat.JakaumanTyyppi;
 
 public class AineistonSyottoLuokka {
 
-    public static void syotaAineisto() {
+    public void syotaAineisto() {
         // Käyttäjä syöttää aineistonsa ohjelmalle.
 
         Scanner lukija = new Scanner(System.in);
 
         int jakauma = valitseJakauma();
+        int testi = valitseTesti();
 
         JakaumanTyyppi jakaumantyyppi = new JakaumanTyyppi(jakauma);
 
-        int testi = valitseTesti();
-        
-        
         if (jakaumantyyppi.onkoDiskreetti() == true) {
             syotaDiskreettiAineisto(testi, jakauma);
         } else if (jakaumantyyppi.onkoJatkuva() == true) {
-            syotaJatkuvaAineisto(testi, jakauma);
+            /// kesken /////
+            JatkuvaAineisto jatkuvaaineisto = syotaJatkuvaAineisto(testi, jakauma);
         } else {
             System.out.println("Jotain meni vikaan. Aineisto ei ole diskreetti eikä jatkuva.");
         }
 
-//        for (int i = 0; i < aineistoLista.size(); i++) {
-//            System.out.println(aineistoLista.get(i));
-//        }
         // Ohjelma kysyy jakaumaa niin kauan, että käyttäjä syöttää hyväksyttävän arvon.
         // Sama juttu testin kysymysessä.
-//        System.out.println(aineisto.getJakauma());
-
     }
 
     public static int valitseJakauma() {
         Scanner lukija = new Scanner(System.in);
         int jakauma = 0;
         while (jakauma == 0) {
-            System.out.println("Valitse jakauma: ");
-            System.out.println("binomi / normaali / poisson / eksponentti / tasainen / geometrinen / bernoulli");
-            String jakaumanValinta = lukija.nextLine();
+            
+//            System.out.println("Valitse jakauma: ");
+//            System.out.println("binomi / normaali / poisson / eksponentti / tasainen / geometrinen / bernoulli");
+//            String jakaumanValinta = lukija.nextLine();
+
+            String jakaumanValinta = "binomi";
 
             if (jakaumanValinta.equals("binomi")) {
                 jakauma = 1;
@@ -68,35 +65,55 @@ public class AineistonSyottoLuokka {
 
     public static void syotaDiskreettiAineisto(int testi, int jakauma) {
         Scanner lukija = new Scanner(System.in);
-        
-        // metodi kysyy aineiston arvot:
 
+        // metodi kysyy aineiston arvot:
         System.out.println("Aineiston tiedot.");
         System.out.println("Syötä aineisto:");
 
-        System.out.print("Aineiston koko n: ");
+        System.out.print("Otoskoko: n = ");
         int n = Integer.parseInt(lukija.nextLine());
 
-        System.out.print("Onnistumisten lukumäärä k: ");
+        System.out.print("Onnistumisten lukumäärä: k = ");
         int k = Integer.parseInt(lukija.nextLine());
 
-        System.out.print("Yksittäisen onnistumisen todennäköisyys p: ");
-        double p = Integer.parseInt(lukija.nextLine());
+        System.out.print("Nollahypoteesi H0: p = ");
+        double p = Double.parseDouble(lukija.nextLine());
+
+        int suunta = 0;
+
+        while (suunta == 0) {
+            System.out.println("Vastahypoteesi H1: mikäli vastahypoteesia ei määritellä, syötä -1.");
+            System.out.print("H1: p = ");
+            double p1 = Double.parseDouble(lukija.nextLine());
+
+            if (p1 < p && p1 != -1) {
+                suunta = 1;
+            } else if (p1 > p) {
+                suunta = 2;
+            } else if (p1 == -1) {
+                suunta = 3;
+            } else {
+                System.out.println("Vastahypoteesi ei voi olla sama kuin nollahypoteesi. Yritä uudelleen.");
+            }
+        }
         
         DiskreettiAineisto diskreettiaineisto = new DiskreettiAineisto(n, k, p, testi, jakauma);
-        
+        Testaaja testaaja = new Testaaja(diskreettiaineisto);
+
+        testaaja.teeTesti(n, k, p, suunta);
+
     }
 
     public static JatkuvaAineisto syotaJatkuvaAineisto(int testi, int jakauma) {
         Scanner lukija = new Scanner(System.in);
         ArrayList<Integer> aineistoLista = new ArrayList<Integer>();
 
+        // keskeneräistä: jatkuvaan aineistoon liittyvä logiikka lisätään myöhemmin.
         System.out.println("Aineiston tiedot.");
         System.out.println("Syötä aineisto ja lopuksi -1:");
         int x;
-        
+
         // Metodi kysyy aineiston satunnaismuuttujia vastaavia arvoja:
-        
         while (true) {
 
             x = Integer.parseInt(lukija.nextLine());
@@ -113,32 +130,33 @@ public class AineistonSyottoLuokka {
             }
 
         }
-        
+
         JatkuvaAineisto aineisto = new JatkuvaAineisto(testi, jakauma, aineistoLista);
-        
+
         return aineisto;
     }
 
     public static int valitseTesti() {
         Scanner lukija = new Scanner(System.in);
-        int testi;
+        int testi = 1;
 
-        while (true) {
-            System.out.println("Valitse testi: ");
-            System.out.println("z-testi / t-testi");
-            String testiValinta = lukija.nextLine();
-
-            if (testiValinta.equals("z-testi")) {
-                testi = 1;
-                break;
-            } else if (testiValinta.equals("t-testi")) {
-                testi = 2;
-                break;
-            } else {
-                System.out.println("Syote ei kelpaa. Valitse jokin annetuista testeistä.");
-            }
-
-        }
+        // optio testin valintaan todennäköisesti poistetaan jossain vaiheessa koodista.
+//        while (true) {
+//            System.out.println("Valitse testi: ");
+//            System.out.println("z-testi / t-testi");
+//            String testiValinta = lukija.nextLine();
+//
+//            if (testiValinta.equals("z-testi")) {
+//                testi = 1;
+//                break;
+//            } else if (testiValinta.equals("t-testi")) {
+//                testi = 2;
+//                break;
+//            } else {
+//                System.out.println("Syote ei kelpaa. Valitse jokin annetuista testeistä.");
+//            }
+//
+//        }
         return testi;
     }
 }
