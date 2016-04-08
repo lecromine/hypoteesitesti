@@ -8,4 +8,4 @@ Päivä | Tunnit | Kuvaus
 01.04.2016 | 3h | Koodaamista, checkstyle-raportti
 06.04.2016 | 4h | Koodaamista; testauslogiikan rakentamista
 07.04.2016 | 3h | binomitestin luominen
-08.04.2016 | 3h | Vertaisarviot, uusi luokkakaavio, raportit, 
+08.04.2016 | 5h | Vertaisarviot, uusi luokkakaavio, raportit, uutta koodinpätkää
