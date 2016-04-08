@@ -11,16 +11,14 @@ public class JatkuvaAineisto {
 
     public JatkuvaAineisto(int testi, int jakauma, ArrayList<Integer> satunnaismuuttujat) {
 
-        
         // keskeneräistä: jatkuvaAineisto toteutetaan myöhemmin.
-        
         if (testi == 1 || testi == 2) {
             this.testi = testi;
         }
         if (jakauma <= 7 && jakauma >= 1) {
-            this.jakauma = jakauma;            
+            this.jakauma = jakauma;
         }
-        
+
         this.satunnaismuuttujat = satunnaismuuttujat;
     }
 

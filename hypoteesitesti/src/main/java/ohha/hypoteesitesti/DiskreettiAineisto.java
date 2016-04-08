@@ -34,7 +34,7 @@ public class DiskreettiAineisto {
         this.n = n;
 
         if (jakauma == 1) {
-            this.binomi = new Binomi(n, k, p);
+            this.binomi = new Binomi();
         } else if (jakauma == 6) {
             this.bernoulli = new Bernoulli(n, p);
         } else if (jakauma == 7) {

@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2016</copyright>
     <item>
-      <title>File: 14,
+      <title>File: 15,
              Errors: 0,
              Warnings: 0,
              Infos: 0
@@ -74,20 +74,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.Aineisto.java">ohha/hypoteesitesti/Aineisto.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.jakaumaluokat.Poisson.java">ohha/hypoteesitesti/jakaumaluokat/Poisson.java</a>
                 </td>
                 <td>
@@ -103,6 +89,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.jakaumaluokat.Binomi.java">ohha/hypoteesitesti/jakaumaluokat/Binomi.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.JatkuvaAineisto.java">ohha/hypoteesitesti/JatkuvaAineisto.java</a>
                 </td>
                 <td>
                   0
@@ -159,6 +159,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.jakaumaluokat.Bernoulli.java">ohha/hypoteesitesti/jakaumaluokat/Bernoulli.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.DiskreettiAineisto.java">ohha/hypoteesitesti/DiskreettiAineisto.java</a>
                 </td>
                 <td>
                   0
