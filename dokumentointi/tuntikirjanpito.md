@@ -7,4 +7,5 @@ Päivä | Tunnit | Kuvaus
 23.03.2016 | 2h | Luokkakaavio, Readme-tiedoston päivitys, koodin muokkaamista
 01.04.2016 | 3h | Koodaamista, checkstyle-raportti
 06.04.2016 | 4h | Koodaamista; testauslogiikan rakentamista
-07.04.2016 | 1h | binomitestin luominen
+07.04.2016 | 3h | binomitestin luominen
+08.04.2016 | 3h | Vertaisarviot, uusi luokkakaavio, raportit, 
