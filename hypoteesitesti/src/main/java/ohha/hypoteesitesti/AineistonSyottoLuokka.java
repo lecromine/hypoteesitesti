@@ -33,11 +33,10 @@ public class AineistonSyottoLuokka {
         Scanner lukija = new Scanner(System.in);
         int jakauma = 0;
         while (jakauma == 0) {
-            
+
 //            System.out.println("Valitse jakauma: ");
 //            System.out.println("binomi / normaali / poisson / eksponentti / tasainen / geometrinen / bernoulli");
 //            String jakaumanValinta = lukija.nextLine();
-
             String jakaumanValinta = "binomi";
 
             if (jakaumanValinta.equals("binomi")) {
@@ -80,23 +79,21 @@ public class AineistonSyottoLuokka {
         double p = Double.parseDouble(lukija.nextLine());
 
         int suunta = 0;
+        double p1 = 0;
 
         while (suunta == 0) {
-            System.out.println("Vastahypoteesi H1: mikäli vastahypoteesia ei määritellä, syötä -1.");
-            System.out.print("H1: p = ");
-            double p1 = Double.parseDouble(lukija.nextLine());
+            System.out.println("Vastahypoteesi. Syötä valintaasi vastaava numero. H1:");
+            System.out.println("1) p < " + p);
+            System.out.println("2) p > " + p);
+            System.out.println("3) Ei vastahypoteesia.");
+            suunta = Integer.parseInt(lukija.nextLine());
 
-            if (p1 < p && p1 != -1) {
-                suunta = 1;
-            } else if (p1 > p) {
-                suunta = 2;
-            } else if (p1 == -1) {
-                suunta = 3;
-            } else {
-                System.out.println("Vastahypoteesi ei voi olla sama kuin nollahypoteesi. Yritä uudelleen.");
+            if (suunta != 1 && suunta != 2 && suunta != 3) {
+                System.out.println("Syote ei kelpaa. Syötä joko 1, 2, tai 3.");
+                suunta = 0;
             }
         }
-        
+
         DiskreettiAineisto diskreettiaineisto = new DiskreettiAineisto(n, k, p, testi, jakauma);
         Testaaja testaaja = new Testaaja(diskreettiaineisto);
 
