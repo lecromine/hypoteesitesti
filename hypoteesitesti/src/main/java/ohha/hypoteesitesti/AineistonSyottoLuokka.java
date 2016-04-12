@@ -69,17 +69,41 @@ public class AineistonSyottoLuokka {
         System.out.println("Aineiston tiedot.");
         System.out.println("Syötä aineisto:");
 
-        System.out.print("Otoskoko: n = ");
-        int n = Integer.parseInt(lukija.nextLine());
+        int n = 0;
+        int k = -1;
+        double p = -1;
 
-        System.out.print("Onnistumisten lukumäärä: k = ");
-        int k = Integer.parseInt(lukija.nextLine());
+        while (n <= 0) {
+            System.out.print("Otoskoko: n = ");
+            n = Integer.parseInt(lukija.nextLine());
 
-        System.out.print("Nollahypoteesi H0: p = ");
-        double p = Double.parseDouble(lukija.nextLine());
+            if (n <= 0) {
+                System.out.println("Syötteesi ei kepaa. Valitse n > 0.");
+            }
+        }
 
+        while (k > n || k < 0) {
+
+            System.out.print("Onnistumisten lukumäärä: k = ");
+            k = Integer.parseInt(lukija.nextLine());
+
+            if (k > n || k < 0) {
+                System.out.println("Syötteesi ei kelpaa. Valitse k >= 0.");
+            }
+
+        }
+
+        while (p < 0 || p > 1) {
+
+            System.out.print("Nollahypoteesi H0: p = ");
+            p = Double.parseDouble(lukija.nextLine());
+            
+            if (p < 0 || p > 1) {
+                System.out.println("Syötteesi ei kelpaa. Valitse 0 < p < 1.");
+            }
+        }
+        
         int suunta = 0;
-        double p1 = 0;
 
         while (suunta == 0) {
             System.out.println("Vastahypoteesi. Syötä valintaasi vastaava numero. H1:");
@@ -89,7 +113,7 @@ public class AineistonSyottoLuokka {
             suunta = Integer.parseInt(lukija.nextLine());
 
             if (suunta != 1 && suunta != 2 && suunta != 3) {
-                System.out.println("Syote ei kelpaa. Syötä joko 1, 2, tai 3.");
+                System.out.println("Syötteesi ei kelpaa. Syötä joko 1, 2, tai 3.");
                 suunta = 0;
             }
         }
