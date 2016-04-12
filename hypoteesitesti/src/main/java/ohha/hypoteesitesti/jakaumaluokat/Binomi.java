@@ -15,7 +15,11 @@ public class Binomi {
 
     
     public double binomiTesti(int n, int k, double p, int suunta) {
-
+        
+        if (n < 0 || k < 1 || k > n || p < 0 || p > 1 || suunta < 1 || suunta > 3) {
+            return -1;
+        }
+        
         // kaksisuuntainen asetelma H0: p = p0
         DecimalFormat df = new DecimalFormat("##.######");
         BinomialDistribution binomijakauma = new BinomialDistribution(n, p);

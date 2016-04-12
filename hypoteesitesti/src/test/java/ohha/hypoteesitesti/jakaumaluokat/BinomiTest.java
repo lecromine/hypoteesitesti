@@ -1,7 +1,6 @@
 package ohha.hypoteesitesti.jakaumaluokat;
 
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
+import ohha.hypoteesitesti.AineistonSyottoLuokka;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -35,29 +34,32 @@ public class BinomiTest {
     //
     // @Test
     // public void hello() {}
+
     @Test
     public void testBinomiTestiTuottaaOikeitaArvoja() {
         Binomi binomi = new Binomi();
-        
-        if ( binomi.binomiTesti(100, 70, 0.5, 3) > 0.0001 ) {
-            fail(binomi.binomiTesti(100, 70, 0.5, 3) + " >= " + 0.0001 );
+
+        if (binomi.binomiTesti(100, 70, 0.5, 3) > 0.0001) {
+            fail(binomi.binomiTesti(100, 70, 0.5, 3) + " >= " + 0.0001);
         }
-        
-                
-        assertTrue(binomi.binomiTesti(985, 984, 0.1, 2) < 0.0001 );
-        assertTrue(binomi.binomiTesti(1000, 990, 0.99, 1) < );
+
+        assertTrue(binomi.binomiTesti(985, 984, 0.1, 2) == 7.850139645593683E-5);
+        assertTrue(binomi.binomiTesti(1000, 990, 0.99, 1) == 0.5427779092215662);
 
     }
 
     @Test
-    public void testBinominPtnfHuomaaVaaratSyotot() {
+    public void testBinomiTestiHuomaaVaaratSyotot() {
         Binomi binomi = new Binomi();
-        
-//        assertTrue(binomi.ptnf(0, 0, 0.5) == -1);
-//        assertTrue(binomi.ptnf(100, 101, 0.5) == -1);
-//        assertTrue(binomi.ptnf(10, -10, 0.5) == -1);
-//        assertTrue(binomi.ptnf(-10, 10, 0.5) == -1);
-//        assertTrue(binomi.ptnf(10, 2, 2) == -1);
+
+        assertTrue(binomi.binomiTesti(0, 0, 0.5, 1) == -1);
+        assertTrue(binomi.binomiTesti(100, 101, 0.5, 2) == -1);
+        assertTrue(binomi.binomiTesti(10, -10, 0.5, 3) == -1);
+        assertTrue(binomi.binomiTesti(-10, 10, 0.5, 1) == -1);
+        assertTrue(binomi.binomiTesti(10, 2, 2, 2) == -1);
+        assertTrue(binomi.binomiTesti(10, 1, 0.2, 5) == -1);
+        assertTrue(binomi.binomiTesti(10, 1, 0.2, -200) == -1);
+        assertTrue(binomi.binomiTesti(10, 1, 0.2, 0) == -1);
         
     }
 
