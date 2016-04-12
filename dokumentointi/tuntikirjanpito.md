@@ -9,3 +9,4 @@ Päivä | Tunnit | Kuvaus
 06.04.2016 | 4h | Koodaamista; testauslogiikan rakentamista
 07.04.2016 | 3h | binomitestin luominen
 08.04.2016 | 5h | Vertaisarviot, uusi luokkakaavio, raportit, uutta koodinpätkää
+12.04.2016 | 5h | Normaalijakauman ohjelmalogiikan koodailua, GUIn rakentamista
