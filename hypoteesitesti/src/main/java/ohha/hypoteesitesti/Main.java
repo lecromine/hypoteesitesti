@@ -13,7 +13,7 @@ public class Main {
 		 AineistonSyottoLuokka aineistonsyottoluokka = new
 		 AineistonSyottoLuokka();
 		
-		 System.out.println("Huom! Ohjelma suorittaa toistaiseksi pelkästään binomitestejä pienillä arvoilla.");
+		 System.out.println("Huom! Ohjelma suorittaa toistaiseksi pelkästään binomitestejä.");
 		
 		 aineistonsyottoluokka.syotaAineisto();
 	

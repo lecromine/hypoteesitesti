@@ -42,9 +42,15 @@ public class BinomiTest {
         if (binomi.binomiTesti(100, 70, 0.5, 3) > 0.0001) {
             fail(binomi.binomiTesti(100, 70, 0.5, 3) + " >= " + 0.0001);
         }
+        
+        if (binomi.binomiTesti(985, 984, 0.1, 2) != 7.850139645593683E-5 ) {
+            fail("luvut eivät täsmää");
+        }
+        
+        if (binomi.binomiTesti(1000, 990, 0.99, 1) == 0.5427779092215662 ) {
+            fail("luvut eivät täsmää");
+        }
 
-        assertTrue(binomi.binomiTesti(985, 984, 0.1, 2) == 7.850139645593683E-5);
-        assertTrue(binomi.binomiTesti(1000, 990, 0.99, 1) == 0.5427779092215662);
 
     }
 

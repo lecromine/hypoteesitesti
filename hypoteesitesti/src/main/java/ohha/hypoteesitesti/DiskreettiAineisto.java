@@ -21,7 +21,7 @@ public class DiskreettiAineisto {
     
     private JakaumanTyyppi tyyppi;
 
-    public DiskreettiAineisto(int n, int k, double p, int testi, int jakauma) {
+    public DiskreettiAineisto(int n, int k, double p, int jakauma) {
 
         if (testi == 1 || testi == 2) {
             this.testi = testi;
@@ -36,9 +36,9 @@ public class DiskreettiAineisto {
         if (jakauma == 1) {
             this.binomi = new Binomi();
         } else if (jakauma == 6) {
-            this.bernoulli = new Bernoulli(n, p);
+            this.bernoulli = new Bernoulli();
         } else if (jakauma == 7) {
-            this.geometrinen = new Geometrinen(k, p);
+            this.geometrinen = new Geometrinen();
         }
 
     }

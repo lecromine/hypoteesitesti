@@ -39,7 +39,7 @@ public class TestaajaTest {
 
     @Test
     public void testaajaTuottaaOikeitaArvojaBinomitestissa() {
-        DiskreettiAineisto diskreettiaineisto = new DiskreettiAineisto(100, 64, 0.5, 1, 1);
+        DiskreettiAineisto diskreettiaineisto = new DiskreettiAineisto(100, 64, 0.5, 1);
         Testaaja testaaja = new Testaaja(diskreettiaineisto);
         
         testaaja.teeTesti(100, 64, 0.5, 3);

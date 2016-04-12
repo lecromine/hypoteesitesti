@@ -5,6 +5,9 @@
  */
 package ohha.hypoteesitesti.jakaumaluokat;
 
+import org.apache.commons.math3.distribution.TDistribution;
+import org.apache.commons.math3.stat.inference.TTest;
+
 /**
  *
  * @author Lecromine
@@ -15,29 +18,22 @@ public class Normaali {
     private double p;
     private int jakaumaNumero;
 
-    public Normaali(double n, double k, double p) {
-        this.n = n;
-        this.k = k;
-        this.p = p;
-        this.jakaumaNumero = 1;
+    public Normaali() {
+        this.jakaumaNumero = 2;
     }
 
-    public double ptnf() {
-        if (p < 0 || p > 1 || n < k) {
-            return -1;
+    public double testaaNormaaliOdotusarvo(int n, double ka, double p) {
+        
+        TDistribution tjakauma = new TDistribution(n-1);
+        
+        for (int i = 1; i < n; i++) {
+            
         }
-        return kombinaatio(n, k) * Math.pow(n, k) * Math.pow(1 - p, n - k);
-    }
-
-    public double kombinaatio(double n, double k) {
-        return permutaatio(n) / (permutaatio(k) * permutaatio(n - k));
-    }
-
-    public double permutaatio(double i) {
-        if (i == 1) {
-            return 1;
-        }
-        return i * permutaatio(i - 1);
+        
+        double t = (ka - p);
+        
+        
+        return 0;
     }
 
     public double getn() {

@@ -1,30 +1,45 @@
 package ohha.hypoteesitesti.jakaumaluokat;
 
+import org.apache.commons.math3.distribution.GeometricDistribution;
+
 public class Geometrinen {
 
-    private int k;
-    private double p;
     private int jakaumaNumero;
+    private double parvo = 0;
+    
+    public Geometrinen() {
 
-    public Geometrinen(int k, double p) {
-        this.k = k;
-        this.p = p;
         this.jakaumaNumero = 6;
     }
 
-    public double ptnf() {
-        if (p < 0 || p > 1) {
+    public double geometrinenTesti(int k, double p, int suunta) {
+
+        if (k < 0 || p < 0 || p > 1 || suunta < 1 || suunta > 3) {
             return -1;
         }
-        return p * Math.pow(1 - p, k);
-    }
 
-    public double getk() {
-        return this.k;
-    }
+        // kaksisuuntainen asetelma H0: p = p0
+        
+        
+        GeometricDistribution geom = new GeometricDistribution(p);
 
-    public double getp() {
-        return this.p;
+        double expected = (1-p)/p;
+        int ylaraja = (int) expected - (int) Math.abs(k - expected); // kriittinen alue: [ylaraja, n]
+                
+        // esim. i = 10. H0: p>0.5 H1: p<0.5
+        // 
+        
+        if (suunta == 2 || suunta == 3) {
+
+            ylaraja = 0;
+
+            for (int i = ylaraja; i <= k; i++) {
+                parvo = parvo + geom.probability(i);
+            }
+        }
+
+        return parvo;
+
     }
 
     public int getjakaumaNumero() {
