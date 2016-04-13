@@ -4,33 +4,22 @@
  * and open the template in the editor.
  */
 package ohha.hypoteesitesti.GUI;
-    
+
+import static com.sun.xml.internal.ws.streaming.XMLStreamReaderUtil.close;
+
 /**
  *
  * @author Lecromine
  */
-public class BinomitestinTulos extends javax.swing.JFrame {
-    int n;
-    int k;
-    double p;
-    double parvo;
-    int suunta;
+public class UlinaRuutu extends javax.swing.JFrame {
+
     /**
-     * Creates new form BinomitestinTulos
+     * Creates new form UlinaRuutu
      */
-    public BinomitestinTulos() {
-        
+    public UlinaRuutu() {
         initComponents();
     }
-    
-    public void lahetaArvot(int n, int k, double p, int suunta, double parvo) {
-        this.n = n;
-        this.k = k;
-        this.p = p;
-        this.parvo = parvo;
-        this.suunta = suunta;
-    }
-            
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -41,56 +30,65 @@ public class BinomitestinTulos extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        tulosKentta = new javax.swing.JLabel();
-        OnnistumisetKentta = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        Ok = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Tulokset");
+        jLabel1.setText("Jokin syötteistä ei kelpaa. Yritä uudelleen.");
 
-        tulosKentta.setText("Otoskoko n: " + n);
+        jLabel2.setText("Otoskoko n > 0");
 
-        OnnistumisetKentta.setText("Onnistumisia k: " + k);
+        jLabel3.setText("Onnistumisten lukumäärä 0 < k < n tai k = 0");
 
-        if ( suunta == 1 ) {
-            jLabel2.setText("Nollahypoteesi: p < " + p + " ja vastahypoteesi: p > " + p);
-        } else if (suunta == 2) {
-            jLabel2.setText("Nollahypoteesi: p > " + p + " ja vastahypoteesi: p < " + p);
-        } else {
-            jLabel2.setText("Nollahypoteesi: p = " + p);
-        }
+        jLabel4.setText("Parametri 0 < p < 1");
+
+        Ok.setText("Ok");
+        Ok.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OkActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Ok)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3)
                     .addComponent(jLabel2)
-                    .addComponent(OnnistumisetKentta)
-                    .addComponent(jLabel1)
-                    .addComponent(tulosKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(243, Short.MAX_VALUE))
+                    .addComponent(jLabel1))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(46, 46, 46)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tulosKentta)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(OnnistumisetKentta)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addContainerGap(193, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(Ok)
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void OkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OkActionPerformed
+        setDefaultCloseOperation(UlinaRuutu.DISPOSE_ON_CLOSE);
+        this.dispose();
+    }//GEN-LAST:event_OkActionPerformed
 
     /**
      * @param args the command line arguments
@@ -109,28 +107,29 @@ public class BinomitestinTulos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BinomitestinTulos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UlinaRuutu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BinomitestinTulos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UlinaRuutu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BinomitestinTulos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UlinaRuutu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BinomitestinTulos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UlinaRuutu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BinomitestinTulos().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel OnnistumisetKentta;
+    private javax.swing.JButton Ok;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel tulosKentta;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }

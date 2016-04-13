@@ -37,7 +37,7 @@ public class AineistonSyottoLuokka {
 //            System.out.println("Valitse jakauma: ");
 //            System.out.println("binomi / normaali / poisson / eksponentti / tasainen / geometrinen / bernoulli");
 //            String jakaumanValinta = lukija.nextLine();
-            String jakaumanValinta = "geometrinen";
+            String jakaumanValinta = "binomi";
 
             if (jakaumanValinta.equals("binomi")) {
                 jakauma = 1;

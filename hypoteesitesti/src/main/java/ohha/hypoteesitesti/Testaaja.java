@@ -19,7 +19,7 @@ public class Testaaja {
         this.parvo = 0;
     }
 
-    public void teeTesti(int n, int k, double p, int suunta) {
+    public double teeTesti(int n, int k, double p, int suunta) {
         if (diskreettiaineisto.getJakauma() == 1) {
 
             BinomialTest binomi = new BinomialTest();
@@ -46,7 +46,7 @@ public class Testaaja {
 //            parvo = geom.geometrinenTesti(n, p, suunta);
         }
 
-        tulosteKayttajalle(n, k, p, suunta, parvo);
+        return parvo;
 
     }
 
