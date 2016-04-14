@@ -8,22 +8,47 @@ import org.apache.commons.math3.stat.inference.AlternativeHypothesis;
 import org.apache.commons.math3.stat.inference.BinomialTest;
 import org.apache.commons.math3.stat.inference.TTest;
 
+/**
+ * Testaajan tehtävä on vastaanottaa käyttäjän syöttämät arvot ja tehdä testi
+ * niiden perusteella.
+ *
+ * @param parvo tähän muuttujaan tallennetaan saatu p-arvo
+ * @param JakaumanTyyppi JakaumanTyypin pääasiallinen tehtävä on pitää
+ * muistissa, onko aineisto diskreetti/jakautunut sekä jakauman nimi
+ *
+ *
+ */
 public class Testaaja {
 
     public double parvo;
 
-    private DiskreettiAineisto diskreettiaineisto;
+    private JakaumanTyyppi jakaumantyyppi;
 
-    public Testaaja(DiskreettiAineisto diskreettiaineisto) {
-        this.diskreettiaineisto = diskreettiaineisto;
+    public Testaaja(JakaumanTyyppi jakaumantyyppi) {
+        this.jakaumantyyppi = jakaumantyyppi;
         this.parvo = 0;
     }
 
+    /**
+     * teeTesti suorittaa testin
+     *
+     * @param n diskreetin aineiston otoskoko
+     * @param k diskreetin aineiston onnistumisten lukumäärä
+     * @param p diskreetin aineiston nollahypoteesin parametri
+     * @param suunta diskreetin aineiston suunta: kaksisuuntainen, suurempaa
+     * kuin, pienempää kuin
+     * @return parvo palauttaa testin mukaisen p-arvon sitä kutsuneelle luokalle
+     */
     public double teeTesti(int n, int k, double p, int suunta) {
-        if (diskreettiaineisto.getJakauma() == 1) {
+
+        if (n < 0 || k < 1 || k > n || p < 0 || p > 1 || suunta < 1 || suunta > 3) {
+            return -1;
+        }
+
+        if (jakaumantyyppi.getJakauma() == 1) {
 
             BinomialTest binomi = new BinomialTest();
-            
+
             if (suunta == 1) {
                 parvo = binomi.binomialTest(n, k, p, AlternativeHypothesis.GREATER_THAN);
             } else if (suunta == 2) {
@@ -31,17 +56,17 @@ public class Testaaja {
             } else if (suunta == 3) {
                 parvo = binomi.binomialTest(n, k, p, AlternativeHypothesis.TWO_SIDED);
             }
-            tulosteKayttajalle(n, k, p, suunta, parvo);
-            
-        } else if (diskreettiaineisto.getJakauma() == 6) {
+
+//            tulosteKayttajalle(n, k, p, suunta, parvo);
+        } else if (jakaumantyyppi.getJakauma() == 6) {
             Bernoulli bernoulli = new Bernoulli();
             parvo = bernoulli.bernoulliTesti(n, p);
-        } else if (diskreettiaineisto.getJakauma() == 7) {
-            
+        } else if (jakaumantyyppi.getJakauma() == 7) {
+
             GeometricDistribution geom = new GeometricDistribution(p);
-            
+
             System.out.println("geom: " + geom.cumulativeProbability(k));
-            
+
 //            Geometrinen geom = new Geometrinen();
 //            parvo = geom.geometrinenTesti(n, p, suunta);
         }
@@ -50,6 +75,17 @@ public class Testaaja {
 
     }
 
+    /**
+     * tulosteKayttajalle on koodauksen alkuvaiheessa tehty tulosriville
+     * ilmestyvä teksti, joka helpottaa koodaamista. Tämä osa koodia poistetaan
+     * lopullisessa versiossa.
+     *
+     * @param n otoskoko
+     * @param k onnistumisten lkm
+     * @param p nollahypoteesin mukainen parametri
+     * @param suunta yksisuuntainen, suurempi kuin, pienempi kuin
+     * @param parvo teeTesti() :n laskema p-arvo
+     */
     public void tulosteKayttajalle(int n, int k, double p, int suunta, double parvo) {
 
         DecimalFormat df = new DecimalFormat("##.######");
@@ -97,14 +133,6 @@ public class Testaaja {
                     "Todennäköisyys saada saatu aineisto nollahypoteesin pätiessä on " + df.format(parvo) + ".");
             System.out.println("Nollahypoteesi hylätään merkitsevyystasolla 0.1");
         }
-    }
-
-    public void maaritaJakauma(int jakaumaNumero) {
-
-    }
-
-    public void maaritaTesti(int testiNumero) {
-
     }
 
 }

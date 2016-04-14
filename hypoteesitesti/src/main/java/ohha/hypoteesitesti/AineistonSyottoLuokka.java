@@ -2,42 +2,53 @@ package ohha.hypoteesitesti;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import ohha.hypoteesitesti.jakaumaluokat.JakaumanTyyppi;
 
+/**
+ * AineistonSyottoLuokka, samoin kuin testaajan metodi tulosteKayttajalle(), on
+ * koodaamisen alkupuolella luotu osa helpottamaan koodaamista. Tämä luokka
+ * poistetaan lopullisesta versiosta. Luokan tehtävänä on vastaanottaa käyttäjän
+ * syöte ja tallentaa ne parametreihin.
+ *
+ * @author Lecromine
+ */
 public class AineistonSyottoLuokka {
 
     public void syotaAineisto() {
-        // Käyttäjä syöttää aineistonsa ohjelmalle.
 
         Scanner lukija = new Scanner(System.in);
 
         int jakauma = valitseJakauma();
-        int testi = valitseTesti();
 
         JakaumanTyyppi jakaumantyyppi = new JakaumanTyyppi(jakauma);
 
         if (jakaumantyyppi.onkoDiskreetti() == true) {
-            syotaDiskreettiAineisto(testi, jakauma);
-        } else if (jakaumantyyppi.onkoJatkuva() == true) {
+            syotaDiskreettiAineisto(jakauma);
+        } else if (jakaumantyyppi.onkoDiskreetti() == false) {
             /// kesken /////
-            
+
         } else {
             System.out.println("Jotain meni vikaan. Aineisto ei ole diskreetti eikä jatkuva.");
         }
 
-        // Ohjelma kysyy jakaumaa niin kauan, että käyttäjä syöttää hyväksyttävän arvon.
-        // Sama juttu testin kysymysessä.
     }
 
+    /**
+     * Käyttäjä valitsee jakauman: esim. binomijakauma, normaalijakauma... Eri
+     * jakaumat vaativat tietoonsa eri parametreja, siksi jakauma pitää valita
+     * erikseen. Aineistoista ei jakaumaa voi päätellä (tai kenties voi, mutta
+     * se taas on paljon laajempi ongelma)
+     *
+     * @return jakauma jakauma tallennetaan int :ksi
+     */
     public static int valitseJakauma() {
         Scanner lukija = new Scanner(System.in);
         int jakauma = 0;
         while (jakauma == 0) {
 
-//            System.out.println("Valitse jakauma: ");
-//            System.out.println("binomi / normaali / poisson / eksponentti / tasainen / geometrinen / bernoulli");
-//            String jakaumanValinta = lukija.nextLine();
-            String jakaumanValinta = "binomi";
+            System.out.println("Valitse jakauma: ");
+            System.out.println("binomi / normaali / poisson / eksponentti / tasainen / geometrinen / bernoulli");
+            String jakaumanValinta = lukija.nextLine();
+//            String jakaumanValinta = "binomi";
 
             if (jakaumanValinta.equals("binomi")) {
                 jakauma = 1;
@@ -62,17 +73,22 @@ public class AineistonSyottoLuokka {
         return jakauma;
     }
 
-    public static void syotaDiskreettiAineisto(int testi, int jakauma) {
+    /**
+     * Diskreetin aineiston syöttö. Diskreetti ja jatkuva pitää tehdä erikseen,
+     * koska ovat niin erilaiset tapaukset.
+     *
+     * @param jakauma käyttäjän syöttämä jakauma, joka on muutettu integeriksi
+     */
+    public static void syotaDiskreettiAineisto(int jakauma) {
         Scanner lukija = new Scanner(System.in);
 
-        // metodi kysyy aineiston arvot:
         System.out.println("Aineiston tiedot.");
         System.out.println("Syötä aineisto:");
 
         int n = 0;
         int k = -1;
         double p = -1;
-        
+
         if (jakauma == 1) {
             while (n <= 0) {
 
@@ -123,34 +139,40 @@ public class AineistonSyottoLuokka {
             }
         }
 
-        DiskreettiAineisto diskreettiaineisto = new DiskreettiAineisto(n, k, p, jakauma);
-        Testaaja testaaja = new Testaaja(diskreettiaineisto);
+        JakaumanTyyppi jakaumantyyppi = new JakaumanTyyppi(jakauma);
+        Testaaja testaaja = new Testaaja(jakaumantyyppi);
 
         testaaja.teeTesti(n, k, p, suunta);
 
     }
 
-    public static void syotaJatkuvaAineisto(int testi, int jakauma) {
+    /**
+     * Jatkuvan aineiston syöttö. Tämä osa koodia on vielä kesken ja se
+     * rakennetaan myöhemmin.
+     *
+     *
+     * @param jakauma metodille annetaan käyttäjän valitsema jakauma Integeriksi
+     * muunnettuna
+     */
+    public static void syotaJatkuvaAineisto(int jakauma) {
         Scanner lukija = new Scanner(System.in);
         ArrayList<Integer> aineistoLista = new ArrayList<Integer>();
 
-        // keskeneräistä: jatkuvaan aineistoon liittyvä logiikka lisätään myöhemmin.
         System.out.println("Aineiston tiedot.");
         System.out.println("Haluatko syöttää otoskeskiarvon ja -varianssin (1) vai koko aineiston (2)?");
         int tyyppi = Integer.parseInt(lukija.nextLine());
-        
+
         if (tyyppi == 1) {
-            syotaJatkuvanAineistonMujaVar();
+ 
         } else if (tyyppi == 2) {
-            syotaJatkuvaAineistoKokonaan();
+
         } else {
             System.out.println("Jotain meni vikaan. Yritä uudelleen.");
         }
-        
+
         System.out.println("Syötä aineisto ja lopuksi -1:");
         int x;
 
-        // Metodi kysyy aineiston satunnaismuuttujia vastaavia arvoja:
         while (true) {
 
             x = Integer.parseInt(lukija.nextLine());
@@ -168,38 +190,6 @@ public class AineistonSyottoLuokka {
 
         }
 
-        JatkuvaAineisto aineisto = new JatkuvaAineisto(testi, jakauma, aineistoLista);
-    }
-    
-    public static void syotaJatkuvanAineistonMujaVar() {
-        
-    }
-    
-    public static void syotaJatkuvaAineistoKokonaan() {
-        
     }
 
-    public static int valitseTesti() {
-        Scanner lukija = new Scanner(System.in);
-        int testi = 1;
-
-        // optio testin valintaan todennäköisesti poistetaan jossain vaiheessa koodista.
-//        while (true) {
-//            System.out.println("Valitse testi: ");
-//            System.out.println("z-testi / t-testi");
-//            String testiValinta = lukija.nextLine();
-//
-//            if (testiValinta.equals("z-testi")) {
-//                testi = 1;
-//                break;
-//            } else if (testiValinta.equals("t-testi")) {
-//                testi = 2;
-//                break;
-//            } else {
-//                System.out.println("Syote ei kelpaa. Valitse jokin annetuista testeistä.");
-//            }
-//
-//        }
-        return testi;
-    }
 }

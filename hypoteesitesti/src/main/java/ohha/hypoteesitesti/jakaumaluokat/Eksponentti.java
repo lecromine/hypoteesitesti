@@ -1,5 +1,11 @@
 package ohha.hypoteesitesti.jakaumaluokat;
-
+/**
+ * Tämä luokka sisältää kaikki eksponenttijakaumaan liittyvät tiedot.
+ * Testauslogiikka säilytetään joko täällä tai siirretään Testaajaan: riippuu
+ * siitä, kuinka pitkä testistä tulee.
+ *
+ * @author Lecromine
+ */
 public class Eksponentti {
 
     private double x;
@@ -7,10 +13,8 @@ public class Eksponentti {
     private double p;
     private int jakaumaNumero;
 
-    public Eksponentti(double x, double p) {
-        this.x = x;
-        this.p = p;
-        this.jakaumaNumero = 4;
+    public Eksponentti() {
+        
     }
 
     public double tf() {
