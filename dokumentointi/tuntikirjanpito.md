@@ -10,3 +10,5 @@ Päivä | Tunnit | Kuvaus
 07.04.2016 | 3h | binomitestin luominen
 08.04.2016 | 5h | Vertaisarviot, uusi luokkakaavio, raportit, uutta koodinpätkää
 12.04.2016 | 5h | Normaalijakauman ohjelmalogiikan koodailua, GUIn rakentamista
+13.04.2016 | 4h | -ll-
+14.04.2016 | 3h | Javadoc, pit, checkstyle, uusi luokkakaavio, GUIn pohtimista
