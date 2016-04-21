@@ -1,9 +1,8 @@
 package ohha.hypoteesitesti.gui;
 
 import java.text.DecimalFormat;
-import ohha.hypoteesitesti.AineistonSyottoLuokka;
 import ohha.hypoteesitesti.Testaaja;
-import ohha.hypoteesitesti.JakaumanTyyppi;
+import ohha.hypoteesitesti.Jakaumantyyppi;
 
 public class NormaalinAineistonSyotto extends javax.swing.JFrame {
 
@@ -19,22 +18,20 @@ public class NormaalinAineistonSyotto extends javax.swing.JFrame {
         otsikko = new javax.swing.JLabel();
         jakaumanMaarite = new javax.swing.JLabel();
         kaKentta = new javax.swing.JTextField();
-        otoskoko = new javax.swing.JLabel();
-        onnistumiset = new javax.swing.JLabel();
+        otoskeskiarvo = new javax.swing.JLabel();
+        keskihajonta = new javax.swing.JLabel();
         sKentta = new javax.swing.JTextField();
         nollahypoteesi = new javax.swing.JLabel();
         nollaHypoteesiOnYhtaKuin = new javax.swing.JLabel();
         pKentta = new javax.swing.JTextField();
-        nOnYhtaKuin = new javax.swing.JLabel();
-        kOnYhtaKuin = new javax.swing.JLabel();
+        kaOnYhtaKuin = new javax.swing.JLabel();
+        sOnYhtaKuin = new javax.swing.JLabel();
         valmisNappi = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        pValue1 = new javax.swing.JLabel();
+        nollahypo = new javax.swing.JLabel();
+        pValue = new javax.swing.JLabel();
         kaValue = new javax.swing.JLabel();
         nValue = new javax.swing.JLabel();
         suunta2 = new javax.swing.JLabel();
-        suuntaValikko = new javax.swing.JComboBox<>();
         parvoKentta = new javax.swing.JLabel();
         parvoValue = new javax.swing.JLabel();
         tulosrivi1 = new javax.swing.JLabel();
@@ -43,16 +40,19 @@ public class NormaalinAineistonSyotto extends javax.swing.JFrame {
         tulosrivi2 = new javax.swing.JLabel();
         nKentta = new javax.swing.JTextField();
         kOnYhtaKuin1 = new javax.swing.JLabel();
-        onnistumiset1 = new javax.swing.JLabel();
+        otoskoko = new javax.swing.JLabel();
         otoska = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         keskihaj = new javax.swing.JLabel();
         otosko = new javax.swing.JLabel();
         sValue = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        testiValikko = new javax.swing.JComboBox<>();
+        testi = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        otsikko.setText("Syötä keräämäsi binomijakautunut aineisto.");
+        otsikko.setText("Syötä keräämäsi normaalijakautunut aineisto.");
 
         String mu = "\u00B5";
         String sigma = "\u03C3\u00B2";
@@ -69,9 +69,9 @@ public class NormaalinAineistonSyotto extends javax.swing.JFrame {
             }
         });
 
-        otoskoko.setText("Otoskeskiarvo");
+        otoskeskiarvo.setText("Otoskeskiarvo");
 
-        onnistumiset.setText("Keskihajonta");
+        keskihajonta.setText("Keskihajonta");
 
         sKentta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,7 +81,7 @@ public class NormaalinAineistonSyotto extends javax.swing.JFrame {
 
         nollahypoteesi.setText("Nollahypoteesi");
 
-        nollaHypoteesiOnYhtaKuin.setText("p");
+        nollaHypoteesiOnYhtaKuin.setText("\u00B5\u2080 = ");
 
         pKentta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,9 +89,9 @@ public class NormaalinAineistonSyotto extends javax.swing.JFrame {
             }
         });
 
-        nOnYhtaKuin.setText("ka   = ");
+        kaOnYhtaKuin.setText("Y\u0305   = ");
 
-        kOnYhtaKuin.setText("s   = ");
+        sOnYhtaKuin.setText("s   = ");
 
         valmisNappi.setText("Valmis!");
         valmisNappi.addActionListener(new java.awt.event.ActionListener() {
@@ -100,11 +100,7 @@ public class NormaalinAineistonSyotto extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Nollahypoteesi H0: p");
-
-        jLabel4.setText("Vastahypoteesi H1: p");
-
-        suuntaValikko.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "<", ">", "=" }));
+        nollahypo.setText("Nollahypoteesi H\u2080: \u00B5\u2080 = ");
 
         parvoKentta.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         parvoKentta.setText("p-arvo");
@@ -119,7 +115,7 @@ public class NormaalinAineistonSyotto extends javax.swing.JFrame {
 
         kOnYhtaKuin1.setText("n   = ");
 
-        onnistumiset1.setText("Otoskoko");
+        otoskoko.setText("Otoskoko");
 
         otoska.setText("Otoskeskiarvo");
 
@@ -127,84 +123,100 @@ public class NormaalinAineistonSyotto extends javax.swing.JFrame {
 
         otosko.setText("Otoskoko");
 
+        jLabel1.setText("Valitse, mitä normaalimallin parametriä testataan.");
+
+        testiValikko.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Odotusarvo (varianssi tuntematon)", "Odotusarvo (varianssi tunnettu)", "Varianssi" }));
+        testiValikko.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                testiValikkoItemStateChanged(evt);
+            }
+        });
+
+        testi.setText("testi");
+        testi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                testiActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tulosrivi1, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
-                    .addComponent(tulosrivi3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tulosrivi2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tulosrivi4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 47, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(otoskoko, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(onnistumiset, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(184, 184, 184)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nOnYhtaKuin, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(kOnYhtaKuin, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(kaKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())))
+                .addComponent(otsikko)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jakaumanMaarite)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(valmisNappi))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(parvoKentta)
-                            .addComponent(jLabel3)
-                            .addComponent(otoska)
-                            .addComponent(keskihaj)
-                            .addComponent(otosko)
-                            .addComponent(jLabel4))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(otoskoko, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(keskihajonta, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(nollahypoteesi, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(otoskeskiarvo, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(kaOnYhtaKuin, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(kOnYhtaKuin1, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(sOnYhtaKuin, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(nollaHypoteesiOnYhtaKuin, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(testiValikko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(kaKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(92, 92, 92))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(98, 98, 98)
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(tulosrivi1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tulosrivi3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tulosrivi2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tulosrivi4, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(parvoValue, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(parvoKentta)
+                                    .addComponent(nollahypo)
+                                    .addComponent(otoska)
+                                    .addComponent(keskihaj)
+                                    .addComponent(otosko))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(parvoValue, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(kaValue, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(nValue, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(sValue, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))
-                                    .addComponent(pValue1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(suunta2, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                                        .addComponent(sValue, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(pValue, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(suunta2, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(otsikko)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jakaumanMaarite)
-                        .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(nollahypoteesi)
-                    .addComponent(onnistumiset1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(nollaHypoteesiOnYhtaKuin)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(suuntaValikko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(valmisNappi, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(kOnYhtaKuin1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(171, 171, 171)
+                        .addComponent(testi)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,30 +225,33 @@ public class NormaalinAineistonSyotto extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(otsikko)
                     .addComponent(jakaumanMaarite))
-                .addGap(27, 27, 27)
+                .addGap(25, 25, 25)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(testiValikko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nOnYhtaKuin)
-                    .addComponent(kaKentta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(otoskoko))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(kOnYhtaKuin)
-                    .addComponent(sKentta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(onnistumiset))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(otoskoko)
                     .addComponent(nKentta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(kOnYhtaKuin1)
-                    .addComponent(onnistumiset1))
-                .addGap(21, 21, 21)
+                    .addComponent(kOnYhtaKuin1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(kaOnYhtaKuin)
+                    .addComponent(kaKentta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(otoskeskiarvo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sOnYhtaKuin)
+                    .addComponent(sKentta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(keskihajonta))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nollahypoteesi, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pKentta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(suuntaValikko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nollaHypoteesiOnYhtaKuin)
-                    .addComponent(nollahypoteesi, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nollaHypoteesiOnYhtaKuin))
                 .addGap(18, 18, 18)
                 .addComponent(valmisNappi)
-                .addGap(15, 15, 15)
+                .addGap(32, 32, 32)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -252,17 +267,15 @@ public class NormaalinAineistonSyotto extends javax.swing.JFrame {
                     .addComponent(nValue, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pValue1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nollahypo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pValue, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(suunta2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(suunta2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(parvoKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(parvoValue, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(66, 66, 66)
+                .addGap(18, 18, 18)
                 .addComponent(tulosrivi1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tulosrivi2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -270,7 +283,9 @@ public class NormaalinAineistonSyotto extends javax.swing.JFrame {
                 .addComponent(tulosrivi3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tulosrivi4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(85, 85, 85))
+                .addGap(23, 23, 23)
+                .addComponent(testi)
+                .addContainerGap())
         );
 
         pack();
@@ -282,54 +297,47 @@ public class NormaalinAineistonSyotto extends javax.swing.JFrame {
 
     private void valmisNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valmisNappiActionPerformed
 
-        if (kaKentta.getText().isEmpty()
-                || sKentta.getText().isEmpty()
-                || pKentta.getText().isEmpty()
-                || Integer.parseInt(kaKentta.getText()) < 1
-                || Integer.parseInt(sKentta.getText()) < 0
+        if (Double.parseDouble(sKentta.getText()) < 0
                 || Double.parseDouble(pKentta.getText()) < 0
-                || Integer.parseInt(kaKentta.getText()) < Integer.parseInt(sKentta.getText())
-                || Double.parseDouble(pKentta.getText()) > 1
-                || suuntaValikko.getSelectedItem().equals(" ")) {
+                || Integer.parseInt(nKentta.getText()) < 1) {
             new UlinaRuutu().setVisible(true);
         } else {
 
-            DecimalFormat df = new DecimalFormat("##.###");
-
-            kaValue.setText(kaKentta.getText());
-            sValue.setText(sKentta.getText());
-            nValue.setText(nKentta.getText());
-
-            int suunta = 0;
+            double ka = 0;
             int n = 0;
-            int k = 0;
             double p = 0;
+            double s = 0;
+            int testi = 0;
 
-            if (suuntaValikko.getSelectedItem().equals("<")) {
-                suunta = 1;
-                nValue.setText("<");
-                suunta2.setText(">");
-                pValue1.setText(pKentta.getText());
-            } else if (suuntaValikko.getSelectedItem().equals(">")) {
-                suunta = 2;
-                nValue.setText(">");
-                suunta2.setText("<");
-                pValue1.setText(pKentta.getText());
-            } else if (suuntaValikko.getSelectedItem().equals("=")) {
-                suunta = 3;
-                nValue.setText("=");
-                suunta2.setText("");
-                pValue1.setText("");
-
+            if (testiValikko.getSelectedItem().equals("Odotusarvo (varianssi tunnettu)")) {
+                testi = 1;
+            } else if (testiValikko.getSelectedItem().equals("Odotusarvo (varianssi tuntematon)")) {
+                testi = 2;
+            } else if (testiValikko.getSelectedItem().equals("Varianssi")) {
+                testi = 3;
             }
 
-            n = Integer.parseInt(kaKentta.getText());
-            k = Integer.parseInt(sKentta.getText());
-            p = Double.parseDouble(pKentta.getText());
+            DecimalFormat df = new DecimalFormat("##.#####");
 
-            JakaumanTyyppi jakaumantyyppi = new JakaumanTyyppi(1);
+            if (kaKentta.isEnabled()) {
+                if (Double.parseDouble(kaKentta.getText()) >= 0) {
+                    kaValue.setText(kaKentta.getText());
+                    ka = Double.parseDouble(kaKentta.getText());
+                }
+            }
+
+            sValue.setText(sKentta.getText());
+            nValue.setText(nKentta.getText());
+            pValue.setText(pKentta.getText());
+
+            
+            s = Double.parseDouble(sKentta.getText());
+            p = Double.parseDouble(pKentta.getText());
+            n = Integer.parseInt(nKentta.getText());
+
+            Jakaumantyyppi jakaumantyyppi = new Jakaumantyyppi(2);
             Testaaja testaaja = new Testaaja(jakaumantyyppi);
-            double parvo = testaaja.teeTesti(n, k, p, suunta);
+            double parvo = testaaja.teeJatkuvaTesti(n, ka, s, p, testi);
             parvoValue.setText("" + df.format(parvo));
 
             if (parvo < 0.1) {
@@ -338,14 +346,14 @@ public class NormaalinAineistonSyotto extends javax.swing.JFrame {
 
                         tulosrivi1.setText("Todennäköisyys saada oheinen aineisto");
                         tulosrivi2.setText("nollahypoteesin pätiessä on " + df.format(parvo * 100) + "%.");
-                        tulosrivi3.setText("Nollahypoteesi hylätään");
-                        tulosrivi4.setText("1% merkitsevyystasolla ");
+                        tulosrivi3.setText("Nollahypoteesin todennäköisyys on vähemmän kuin 1%");
+                        tulosrivi4.setText("joten se hylätään tasolla 1%");
 
                     } else if (parvo > 0.01) {
                         tulosrivi1.setText("Todennäköisyys saada oheinen aineisto");
                         tulosrivi2.setText("nollahypoteesin pätiessä on " + df.format(parvo * 100) + "%.");
-                        tulosrivi3.setText("Nollahypoteesi hyväksytään");
-                        tulosrivi4.setText("5% merkitsevyystasolla mutta hylätään 1% tasolla.");
+                        tulosrivi3.setText("Nollahypoteesi hylätään");
+                        tulosrivi4.setText("5% merkitsevyystasolla mutta hyväksytään 1% tasolla.");
                     }
                 } else {
 
@@ -383,6 +391,39 @@ public class NormaalinAineistonSyotto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nKenttaActionPerformed
 
+    private void testiValikkoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_testiValikkoItemStateChanged
+        if (testiValikko.getSelectedItem().equals("Odotusarvo (varianssi tunnettu)")) {
+            kaKentta.enable();
+            nollaHypoteesiOnYhtaKuin.setText("\u00B5\u2080 = ");
+            otoska.setText("Otoskeskiarvo");
+            nollahypo.setText("Nollahypoteesi H\u2080: \u00B5\u2080 = ");
+            sOnYhtaKuin.setText("\u03C3\u00B2 = ");
+            keskihaj.setText("Varianssi");
+            keskihajonta.setText("Varianssi");
+        } else if (testiValikko.getSelectedItem().equals("Odotusarvo (varianssi tuntematon)")) {
+            kaKentta.enable();
+            sKentta.enable();
+            sOnYhtaKuin.setText("s  = ");
+            keskihaj.setText("Keskihajonta");
+            keskihajonta.setText("Keskihajonta");
+            nollaHypoteesiOnYhtaKuin.setText("\u00B5\u2080 = ");
+            otoska.setText("Otoskeskiarvo");
+            nollahypo.setText("Nollahypoteesi H\u2080: \u00B5\u2080 = ");
+        } else if (testiValikko.getSelectedItem().equals("Varianssi")) {
+            kaKentta.disable();
+
+            sKentta.enable();
+            keskihaj.setText("Keskihajonta");
+            nollaHypoteesiOnYhtaKuin.setText("\u03C3\u2080 = ");
+            otoska.setText("");
+            nollahypo.setText("Nollahypoteesi H\u2080: \u03C3\u2080 = ");
+        }
+    }//GEN-LAST:event_testiValikkoItemStateChanged
+
+    private void testiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testiActionPerformed
+        new Vikailmoitus().setVisible(true);
+    }//GEN-LAST:event_testiActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -410,6 +451,12 @@ public class NormaalinAineistonSyotto extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -420,34 +467,35 @@ public class NormaalinAineistonSyotto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel jakaumanMaarite;
-    private javax.swing.JLabel kOnYhtaKuin;
     private javax.swing.JLabel kOnYhtaKuin1;
     private javax.swing.JTextField kaKentta;
+    private javax.swing.JLabel kaOnYhtaKuin;
     private javax.swing.JLabel kaValue;
     private javax.swing.JLabel keskihaj;
+    private javax.swing.JLabel keskihajonta;
     private javax.swing.JTextField nKentta;
-    private javax.swing.JLabel nOnYhtaKuin;
     private javax.swing.JLabel nValue;
     private javax.swing.JLabel nollaHypoteesiOnYhtaKuin;
+    private javax.swing.JLabel nollahypo;
     private javax.swing.JLabel nollahypoteesi;
-    private javax.swing.JLabel onnistumiset;
-    private javax.swing.JLabel onnistumiset1;
     private javax.swing.JLabel otoska;
+    private javax.swing.JLabel otoskeskiarvo;
     private javax.swing.JLabel otosko;
     private javax.swing.JLabel otoskoko;
     private javax.swing.JLabel otsikko;
     private javax.swing.JTextField pKentta;
-    private javax.swing.JLabel pValue1;
+    private javax.swing.JLabel pValue;
     private javax.swing.JLabel parvoKentta;
     private javax.swing.JLabel parvoValue;
     private javax.swing.JTextField sKentta;
+    private javax.swing.JLabel sOnYhtaKuin;
     private javax.swing.JLabel sValue;
     private javax.swing.JLabel suunta2;
-    private javax.swing.JComboBox<String> suuntaValikko;
+    private javax.swing.JButton testi;
+    private javax.swing.JComboBox<String> testiValikko;
     private javax.swing.JLabel tulosrivi1;
     private javax.swing.JLabel tulosrivi2;
     private javax.swing.JLabel tulosrivi3;

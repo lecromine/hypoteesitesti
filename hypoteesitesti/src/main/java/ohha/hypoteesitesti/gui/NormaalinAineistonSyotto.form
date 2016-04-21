@@ -24,101 +24,102 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="tulosrivi1" pref="306" max="32767" attributes="0"/>
-                  <Component id="tulosrivi3" alignment="0" max="32767" attributes="0"/>
-                  <Component id="tulosrivi2" alignment="0" max="32767" attributes="0"/>
-                  <Component id="tulosrivi4" alignment="0" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="otsikko" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jakaumanMaarite" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="47" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="otoskoko" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="onnistumiset" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="184" pref="184" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="nOnYhtaKuin" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="kOnYhtaKuin" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="valmisNappi" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="otoskoko" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="keskihajonta" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nollahypoteesi" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="otoskeskiarvo" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="kaOnYhtaKuin" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="kOnYhtaKuin1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="sOnYhtaKuin" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nollaHypoteesiOnYhtaKuin" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="testiValikko" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="sKentta" min="-2" pref="34" max="-2" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="kaKentta" min="-2" pref="34" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="kaKentta" min="-2" pref="34" max="-2" attributes="0"/>
+                          <Component id="nKentta" min="-2" pref="34" max="-2" attributes="0"/>
+                          <Component id="sKentta" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                          <Component id="pKentta" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+              </Group>
+              <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jSeparator1" pref="430" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="parvoKentta" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                          <Component id="otoska" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="keskihaj" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="otosko" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="parvoValue" min="-2" pref="70" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="tulosrivi1" max="32767" attributes="0"/>
+                              <Component id="tulosrivi3" alignment="0" max="32767" attributes="0"/>
+                              <Component id="tulosrivi2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="tulosrivi4" alignment="0" min="-2" pref="306" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="parvoKentta" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nollahypo" min="-2" max="-2" attributes="0"/>
+                                  <Component id="otoska" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="keskihaj" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="otosko" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="parvoValue" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                       <Component id="kaValue" alignment="0" max="32767" attributes="0"/>
                                       <Component id="nValue" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="sValue" alignment="0" pref="190" max="32767" attributes="0"/>
+                                      <Component id="sValue" alignment="0" min="-2" pref="190" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="pValue1" min="-2" pref="179" max="-2" attributes="0"/>
+                                  <Component id="pValue" min="-2" pref="179" max="-2" attributes="0"/>
                                   <Component id="suunta2" alignment="0" min="-2" pref="12" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="otsikko" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jakaumanMaarite" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
+                      <Component id="testi" min="-2" max="-2" attributes="0"/>
                   </Group>
-              </Group>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="nollahypoteesi" min="-2" max="-2" attributes="0"/>
-                  <Component id="onnistumiset1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="nollaHypoteesiOnYhtaKuin" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="suuntaValikko" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="pKentta" min="-2" pref="62" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="valmisNappi" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="kOnYhtaKuin1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="nKentta" min="-2" pref="34" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
-          <Component id="jSeparator1" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -129,34 +130,37 @@
                   <Component id="otsikko" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jakaumanMaarite" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="testiValikko" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="nOnYhtaKuin" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="kaKentta" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="otoskoko" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="kOnYhtaKuin" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="sKentta" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="onnistumiset" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="nKentta" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="kOnYhtaKuin1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="onnistumiset1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="pKentta" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="suuntaValikko" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="nollaHypoteesiOnYhtaKuin" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="kaOnYhtaKuin" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="kaKentta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="otoskeskiarvo" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="sOnYhtaKuin" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="sKentta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="keskihajonta" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="nollahypoteesi" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="pKentta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="nollaHypoteesiOnYhtaKuin" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="valmisNappi" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
@@ -175,20 +179,17 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jLabel3" min="-2" pref="24" max="-2" attributes="0"/>
-                  <Component id="pValue1" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="nollahypo" min="-2" pref="24" max="-2" attributes="0"/>
+                  <Component id="pValue" min="-2" pref="22" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel4" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="suunta2" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
-              </Group>
+              <Component id="suunta2" min="-2" pref="24" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="parvoKentta" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="parvoValue" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="tulosrivi1" min="-2" pref="20" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="tulosrivi2" min="-2" pref="20" max="-2" attributes="0"/>
@@ -196,7 +197,9 @@
               <Component id="tulosrivi3" min="-2" pref="20" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="tulosrivi4" min="-2" pref="20" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Component id="testi" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -204,7 +207,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="otsikko">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Sy&#xf6;t&#xe4; ker&#xe4;&#xe4;m&#xe4;si binomijakautunut aineisto."/>
+        <Property name="text" type="java.lang.String" value="Sy&#xf6;t&#xe4; ker&#xe4;&#xe4;m&#xe4;si normaalijakautunut aineisto."/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jakaumanMaarite">
@@ -223,12 +226,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kaKenttaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="otoskoko">
+    <Component class="javax.swing.JLabel" name="otoskeskiarvo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Otoskeskiarvo"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="onnistumiset">
+    <Component class="javax.swing.JLabel" name="keskihajonta">
       <Properties>
         <Property name="text" type="java.lang.String" value="Keskihajonta"/>
       </Properties>
@@ -245,7 +248,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="nollaHypoteesiOnYhtaKuin">
       <Properties>
-        <Property name="text" type="java.lang.String" value="p"/>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="&quot;\u00B5\u2080 = &quot;" type="code"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="pKentta">
@@ -253,12 +258,14 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pKenttaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="nOnYhtaKuin">
+    <Component class="javax.swing.JLabel" name="kaOnYhtaKuin">
       <Properties>
-        <Property name="text" type="java.lang.String" value="ka   = "/>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="&quot;Y\u0305   = &quot;" type="code"/>
+        </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="kOnYhtaKuin">
+    <Component class="javax.swing.JLabel" name="sOnYhtaKuin">
       <Properties>
         <Property name="text" type="java.lang.String" value="s   = "/>
       </Properties>
@@ -271,38 +278,20 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="valmisNappiActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="nollahypo">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nollahypoteesi H0: p"/>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="&quot;Nollahypoteesi H\u2080: \u00B5\u2080 = &quot;" type="code"/>
+        </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Vastahypoteesi H1: p"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="pValue1">
+    <Component class="javax.swing.JLabel" name="pValue">
     </Component>
     <Component class="javax.swing.JLabel" name="kaValue">
     </Component>
     <Component class="javax.swing.JLabel" name="nValue">
     </Component>
     <Component class="javax.swing.JLabel" name="suunta2">
-    </Component>
-    <Component class="javax.swing.JComboBox" name="suuntaValikko">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value=" "/>
-            <StringItem index="1" value="&lt;"/>
-            <StringItem index="2" value="&gt;"/>
-            <StringItem index="3" value="="/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="parvoKentta">
       <Properties>
@@ -337,7 +326,7 @@
         <Property name="text" type="java.lang.String" value="n   = "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="onnistumiset1">
+    <Component class="javax.swing.JLabel" name="otoskoko">
       <Properties>
         <Property name="text" type="java.lang.String" value="Otoskoko"/>
       </Properties>
@@ -360,6 +349,36 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="sValue">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Valitse, mit&#xe4; normaalimallin parametri&#xe4; testataan."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="testiValikko">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Odotusarvo (varianssi tuntematon)"/>
+            <StringItem index="1" value="Odotusarvo (varianssi tunnettu)"/>
+            <StringItem index="2" value="Varianssi"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="testiValikkoItemStateChanged"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="testi">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="testi"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="testiActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

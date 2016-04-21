@@ -1,7 +1,7 @@
 package ohha.hypoteesitesti;
 
+import ohha.hypoteesitesti.gui.Vikailmoitus;
 import ohha.hypoteesitesti.jakaumaluokat.Bernoulli;
-import ohha.hypoteesitesti.jakaumaluokat.Binomi;
 import ohha.hypoteesitesti.jakaumaluokat.Eksponentti;
 import ohha.hypoteesitesti.jakaumaluokat.Geometrinen;
 import ohha.hypoteesitesti.jakaumaluokat.Normaali;
@@ -15,9 +15,8 @@ import ohha.hypoteesitesti.jakaumaluokat.Tasainen;
  *
  * @author Lecromine
  */
-public class JakaumanTyyppi {
+public class Jakaumantyyppi {
 
-    public Binomi binomi;
     public Geometrinen geometrinen;
     public Bernoulli bernoulli;
 
@@ -28,17 +27,17 @@ public class JakaumanTyyppi {
 
     int jakauma;
 
+    boolean jakaumanValintaOikein = true;
+
     /**
      * JakaumanTyyppi luo uuden jakaumaa vastaavan olion.
      *
      * @param jakauma käyttäjän valitsemaa jakaumaa vastaava int
      */
-    public JakaumanTyyppi(int jakauma) {
+    public Jakaumantyyppi(int jakauma) {
         this.jakauma = jakauma;
 
-        if (jakauma == 1) {
-            this.binomi = new Binomi();
-        } else if (jakauma == 2) {
+        if (jakauma == 2) {
             this.normaali = new Normaali();
         } else if (jakauma == 3) {
             this.poisson = new Poisson();
@@ -50,7 +49,12 @@ public class JakaumanTyyppi {
             this.bernoulli = new Bernoulli();
         } else if (jakauma == 7) {
             this.geometrinen = new Geometrinen();
+        } else {
+            new Vikailmoitus().setVisible(true);
+            jakaumanValintaOikein = false;
+            jakauma = 1;
         }
+
     }
 
     public int getJakauma() {
@@ -66,28 +70,11 @@ public class JakaumanTyyppi {
     public boolean onkoDiskreetti() {
         if (jakauma == 1 || jakauma == 6 || jakauma == 7) {
             return true;
+        } else if ( jakauma == 2 || jakauma == 3 || jakauma == 4 || jakauma == 5) {
+            return false;
         } else {
             return false;
         }
     }
 
-    public String getJakaumanNimi() {
-        if (jakauma == 1) {
-            return "binomi";
-        } else if (jakauma == 2) {
-            return "normaali";
-        } else if (jakauma == 3) {
-            return "poisson";
-        } else if (jakauma == 4) {
-            return "eksponentti";
-        } else if (jakauma == 5) {
-            return "tasainen";
-        } else if (jakauma == 6) {
-            return "geometrinen";
-        } else if (jakauma == 7) {
-            return "bernoulli";
-        } else {
-            return "Jakaumaa ei ole valittu";
-        }
-    }
 }

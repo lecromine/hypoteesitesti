@@ -42,21 +42,24 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="poissonJakaumaNappi" min="-2" pref="140" max="-2" attributes="0"/>
-                          <Component id="normaaliJakaumaNappi" min="-2" pref="140" max="-2" attributes="0"/>
-                          <Component id="binomiJakaumaNappi" min="-2" pref="140" max="-2" attributes="0"/>
-                          <Component id="eksponenttiJakaumaNappi" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="testi" min="-2" pref="177" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="eksponenttiJakaumaNappi" alignment="0" max="32767" attributes="0"/>
+                              <Component id="normaaliJakaumaNappi" alignment="0" max="32767" attributes="0"/>
+                              <Component id="binomiJakaumaNappi" alignment="0" max="32767" attributes="0"/>
+                              <Component id="poissonJakaumaNappi" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
               </Group>
-              <EmptySpace pref="132" max="32767" attributes="0"/>
+              <EmptySpace pref="115" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -73,7 +76,9 @@
               <Component id="eksponenttiJakaumaNappi" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="poissonJakaumaNappi" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="84" max="32767" attributes="0"/>
+              <EmptySpace pref="35" max="32767" attributes="0"/>
+              <Component id="testi" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -121,6 +126,15 @@
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="poissonJakaumaNappiMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="poissonJakaumaNappiActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="testi">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="testinappi"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="testiMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="testiActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

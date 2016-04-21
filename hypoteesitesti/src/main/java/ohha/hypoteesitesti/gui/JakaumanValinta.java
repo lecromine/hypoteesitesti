@@ -22,6 +22,7 @@ public class JakaumanValinta extends javax.swing.JFrame {
         normaaliJakaumaNappi = new javax.swing.JButton();
         eksponenttiJakaumaNappi = new javax.swing.JButton();
         poissonJakaumaNappi = new javax.swing.JButton();
+        testi = new javax.swing.JButton();
 
         jRadioButton2.setText("jRadioButton2");
 
@@ -78,6 +79,18 @@ public class JakaumanValinta extends javax.swing.JFrame {
             }
         });
 
+        testi.setText("testinappi");
+        testi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                testiMouseClicked(evt);
+            }
+        });
+        testi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                testiActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -85,16 +98,18 @@ public class JakaumanValinta extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(poissonJakaumaNappi, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(normaaliJakaumaNappi, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(binomiJakaumaNappi, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(eksponenttiJakaumaNappi, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(137, 137, 137)
-                        .addComponent(jLabel1)))
-                .addContainerGap(132, Short.MAX_VALUE))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(108, 108, 108)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(testi, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(eksponenttiJakaumaNappi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(normaaliJakaumaNappi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(binomiJakaumaNappi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(poissonJakaumaNappi, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,7 +124,9 @@ public class JakaumanValinta extends javax.swing.JFrame {
                 .addComponent(eksponenttiJakaumaNappi)
                 .addGap(18, 18, 18)
                 .addComponent(poissonJakaumaNappi)
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addComponent(testi)
+                .addGap(26, 26, 26))
         );
 
         pack();
@@ -147,6 +164,14 @@ public class JakaumanValinta extends javax.swing.JFrame {
        
 
     }//GEN-LAST:event_poissonJakaumaNappiMouseClicked
+
+    private void testiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_testiMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_testiMouseClicked
+
+    private void testiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testiActionPerformed
+        new Vikailmoitus().setVisible(true);
+    }//GEN-LAST:event_testiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,5 +221,6 @@ public class JakaumanValinta extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JButton normaaliJakaumaNappi;
     private javax.swing.JButton poissonJakaumaNappi;
+    private javax.swing.JButton testi;
     // End of variables declaration//GEN-END:variables
 }
