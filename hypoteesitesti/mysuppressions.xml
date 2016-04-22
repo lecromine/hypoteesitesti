@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE suppressions PUBLIC
+    "-//Puppy Crawl//DTD Suppressions 1.1//EN"
+    "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
+
+<suppressions>
+    <suppress files="BinomiAineistonSyotto.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="BinomiAineistonTulokset.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="NormaaliParametriTestinValinta.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="NormaalinAineistonSyottoVarianssi.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="NormaalinAineistonSyottoVarianssiTunnettu.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="NormaalinAineistonSyottoVarianssiTuntematon.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="NormaalinAineistonTulokset.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="TestinValinta.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="UlinaRuutu.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="Vikailmoitus.java" checks="[a-zA-Z0-9]*"/>
+</suppressions>

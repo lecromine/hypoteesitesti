@@ -70,7 +70,7 @@ public class Vikailmoitus extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.exit(0);
-        new JakaumanValinta().setVisible(true);
+        new TestinValinta().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

@@ -25,8 +25,8 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2016</copyright>
     <item>
-      <title>File: 15,
-             Errors: 15,
+      <title>File: 13,
+             Errors: 0,
              Warnings: 0,
              Infos: 0
       </title>
@@ -46,6 +46,34 @@ under the License.
           <tbody>
                           <tr>
                 <td>
+                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.gui.NormaalinAineistonTulokset.java">ohha/hypoteesitesti/gui/NormaalinAineistonTulokset.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.logiikka.Main.java">ohha/hypoteesitesti/logiikka/Main.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.gui.BinomiAineistonSyotto.java">ohha/hypoteesitesti/gui/BinomiAineistonSyotto.java</a>
                 </td>
                 <td>
@@ -55,26 +83,12 @@ under the License.
                   0
                 </td>
                 <td>
-                  3
+                  0
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.gui.JakaumanValinta.java">ohha/hypoteesitesti/gui/JakaumanValinta.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  2
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.jakaumaluokat.Geometrinen.java">ohha/hypoteesitesti/jakaumaluokat/Geometrinen.java</a>
+                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.logiikka.Testaaja.java">ohha/hypoteesitesti/logiikka/Testaaja.java</a>
                 </td>
                 <td>
                   0
@@ -88,7 +102,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.jakaumaluokat.Poisson.java">ohha/hypoteesitesti/jakaumaluokat/Poisson.java</a>
+                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.gui.BinomiAineistonTulokset.java">ohha/hypoteesitesti/gui/BinomiAineistonTulokset.java</a>
                 </td>
                 <td>
                   0
@@ -102,7 +116,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.jakaumaluokat.Binomi.java">ohha/hypoteesitesti/jakaumaluokat/Binomi.java</a>
+                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.logiikka.Normaali.java">ohha/hypoteesitesti/logiikka/Normaali.java</a>
                 </td>
                 <td>
                   0
@@ -116,7 +130,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.Testaaja.java">ohha/hypoteesitesti/Testaaja.java</a>
+                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.gui.NormaalinAineistonSyottoVarianssi.java">ohha/hypoteesitesti/gui/NormaalinAineistonSyottoVarianssi.java</a>
                 </td>
                 <td>
                   0
@@ -130,21 +144,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.AineistonSyottoLuokka.java">ohha/hypoteesitesti/AineistonSyottoLuokka.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  3
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.jakaumaluokat.Normaali.java">ohha/hypoteesitesti/jakaumaluokat/Normaali.java</a>
+                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.gui.NormaalinAineistonSyottoVarianssiTunnettu.java">ohha/hypoteesitesti/gui/NormaalinAineistonSyottoVarianssiTunnettu.java</a>
                 </td>
                 <td>
                   0
@@ -154,62 +154,6 @@ under the License.
                 </td>
                 <td>
                   0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.gui.NormaalinAineistonSyotto.java">ohha/hypoteesitesti/gui/NormaalinAineistonSyotto.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  3
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.jakaumaluokat.Bernoulli.java">ohha/hypoteesitesti/jakaumaluokat/Bernoulli.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.jakaumaluokat.Tasainen.java">ohha/hypoteesitesti/jakaumaluokat/Tasainen.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.Main.java">ohha/hypoteesitesti/Main.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  3
                 </td>
               </tr>
                           <tr>
@@ -223,26 +167,54 @@ under the License.
                   0
                 </td>
                 <td>
-                  1
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.jakaumaluokat.Eksponentti.java">ohha/hypoteesitesti/jakaumaluokat/Eksponentti.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
                   0
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.JakaumanTyyppi.java">ohha/hypoteesitesti/JakaumanTyyppi.java</a>
+                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.gui.TestinValinta.java">ohha/hypoteesitesti/gui/TestinValinta.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.gui.NormaalinAineistonSyottoVarianssiTuntematon.java">ohha/hypoteesitesti/gui/NormaalinAineistonSyottoVarianssiTuntematon.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.gui.Vikailmoitus.java">ohha/hypoteesitesti/gui/Vikailmoitus.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#ohha.hypoteesitesti.gui.NormaaliParametriTestinValinta.java">ohha/hypoteesitesti/gui/NormaaliParametriTestinValinta.java</a>
                 </td>
                 <td>
                   0

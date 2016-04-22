@@ -1,8 +1,7 @@
 package ohha.hypoteesitesti.gui;
 
 import java.text.DecimalFormat;
-import ohha.hypoteesitesti.Testaaja;
-import ohha.hypoteesitesti.Jakaumantyyppi;
+import ohha.hypoteesitesti.logiikka.Testaaja;
 
 public class BinomiAineistonTulokset extends javax.swing.JFrame {
 
@@ -36,9 +35,9 @@ public class BinomiAineistonTulokset extends javax.swing.JFrame {
             pValue1.setText("");
 
         }
-        Jakaumantyyppi jakaumantyyppi = new Jakaumantyyppi(1);
-        Testaaja testaaja = new Testaaja(jakaumantyyppi);
-        double parvo = testaaja.teeDiskreettiTesti(n, k, p, suuntaNumero);
+        
+        Testaaja testaaja = new Testaaja();
+        double parvo = testaaja.teeBinomiTesti(n, k, p, suuntaNumero);
         parvoValue.setText("" + df.format(parvo));
 
         if (parvo < 0.1) {

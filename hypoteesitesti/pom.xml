@@ -59,10 +59,10 @@
                 <version>1.1.8</version>
                 <configuration>
                     <targetClasses>
-                        <param>ohha.hypoteesitesti.*</param>
+                        <param>ohha.hypoteesitesti.logiikka.*</param>
                     </targetClasses>
                     <targetTests>
-                        <param>ohha.hypoteesitesti.*</param>
+                        <param>ohha.hypoteesitesti.logiikka.*</param>
                     </targetTests>
                 </configuration>
             </plugin>

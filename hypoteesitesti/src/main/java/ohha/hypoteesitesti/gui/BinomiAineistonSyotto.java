@@ -1,9 +1,5 @@
 package ohha.hypoteesitesti.gui;
 
-import java.text.DecimalFormat;
-import ohha.hypoteesitesti.Testaaja;
-import ohha.hypoteesitesti.Jakaumantyyppi;
-
 public class BinomiAineistonSyotto extends javax.swing.JFrame {
 
     public BinomiAineistonSyotto() {
