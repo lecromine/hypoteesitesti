@@ -21,12 +21,15 @@ public class Testaaja {
 
     public double parvo;
 
+    /**
+     * Parametrien määritys.
+     */
     public Testaaja() {
         this.parvo = 0;
     }
 
     /**
-     * teeTesti suorittaa testin
+     * teeTesti suorittaa testin.
      *
      * @param n diskreetin aineiston otoskoko
      * @param k diskreetin aineiston onnistumisten lukumäärä
@@ -74,6 +77,9 @@ public class Testaaja {
      * @param ka otoskeskiarvo
      * @param s keskihajonta
      * @param p hypoteesi odotusarvosta
+     * @param testi lukuarvona 1, 2 tai 3. Kertoo, mikä testi ajetaan:
+     * odotusarvon testi, kun varianssi on tunnettu/tuntematon, vai varianssin
+     * testi.
      * @return parvo
      */
     public double teeNormaaliTesti(int n, double ka, double s, double p, int testi) {
