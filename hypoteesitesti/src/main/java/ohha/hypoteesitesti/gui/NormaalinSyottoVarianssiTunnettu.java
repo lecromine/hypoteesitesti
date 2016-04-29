@@ -1,8 +1,8 @@
 package ohha.hypoteesitesti.gui;
 
-public class NormaalinAineistonSyottoVarianssiTunnettu extends javax.swing.JFrame {
+public class NormaalinSyottoVarianssiTunnettu extends javax.swing.JFrame {
 
-    public NormaalinAineistonSyottoVarianssiTunnettu() {
+    public NormaalinSyottoVarianssiTunnettu() {
         initComponents();
 
     }
@@ -28,15 +28,24 @@ public class NormaalinAineistonSyottoVarianssiTunnettu extends javax.swing.JFram
         otoskoko = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        suuntaValikko = new javax.swing.JComboBox<>();
+        takaisin = new javax.swing.JButton();
+        nollaHypoteesiOnYhtaKuin1 = new javax.swing.JLabel();
+        kaOnYhtaKuin1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        otsikko.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        otsikko.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         otsikko.setText("Syötä keräämäsi normaalisti jakautunut aineisto.");
 
         String mu = "\u00B5";
         String sigma = "\u03C3\u00B2";
+        jakaumanMaarite.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        jakaumanMaarite.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jakaumanMaarite.setText("X ~ N(" + mu + ", " + sigma + ")");
 
+        kaKentta.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         kaKentta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 kaKenttaMouseClicked(evt);
@@ -48,30 +57,39 @@ public class NormaalinAineistonSyottoVarianssiTunnettu extends javax.swing.JFram
             }
         });
 
+        otoskeskiarvo.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         otoskeskiarvo.setText("Otoskeskiarvo");
 
+        varianssi.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         varianssi.setText("Varianssi");
 
+        varKentta.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         varKentta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 varKenttaActionPerformed(evt);
             }
         });
 
+        nollahypoteesi.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         nollahypoteesi.setText("Nollahypoteesi");
 
-        nollaHypoteesiOnYhtaKuin.setText("\u00B5\u2080 = ");
+        nollaHypoteesiOnYhtaKuin.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        nollaHypoteesiOnYhtaKuin.setText("\u00B5\u2080");
 
+        pKentta.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         pKentta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pKenttaActionPerformed(evt);
             }
         });
 
+        kaOnYhtaKuin.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         kaOnYhtaKuin.setText("Y\u0305   = ");
 
+        varOnYhtaKuin.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         varOnYhtaKuin.setText("\u03C3\u00B2   = ");
 
+        valmisNappi.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         valmisNappi.setText("Valmis!");
         valmisNappi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,36 +97,60 @@ public class NormaalinAineistonSyottoVarianssiTunnettu extends javax.swing.JFram
             }
         });
 
+        nKentta.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         nKentta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nKenttaActionPerformed(evt);
             }
         });
 
+        kOnYhtaKuin1.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         kOnYhtaKuin1.setText("n   = ");
 
+        otoskoko.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         otoskoko.setText("Otoskoko");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("T-testi normaalijakauman odotusarvolle");
 
+        jLabel1.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Varianssi tunnettu");
+
+        suuntaValikko.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        suuntaValikko.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "<", ">", "=" }));
+
+        takaisin.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        takaisin.setText("Takaisin");
+        takaisin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                takaisinActionPerformed(evt);
+            }
+        });
+
+        nollaHypoteesiOnYhtaKuin1.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        nollaHypoteesiOnYhtaKuin1.setText("\u00B5\u2080");
+
+        kaOnYhtaKuin1.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        kaOnYhtaKuin1.setText("Y\u0305");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(takaisin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(valmisNappi)
+                .addGap(92, 92, 92))
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jakaumanMaarite, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(otsikko, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(100, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(82, 82, 82)
-                                .addComponent(jakaumanMaarite))
-                            .addComponent(otsikko))
-                        .addGap(0, 9, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(63, 63, 63)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,27 +158,26 @@ public class NormaalinAineistonSyottoVarianssiTunnettu extends javax.swing.JFram
                             .addComponent(varianssi, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(nollahypoteesi, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(otoskeskiarvo, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(kaOnYhtaKuin, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(kOnYhtaKuin1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(varOnYhtaKuin, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(nollaHypoteesiOnYhtaKuin, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(kaKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(varKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(nollaHypoteesiOnYhtaKuin, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(177, 177, 177)
-                        .addComponent(valmisNappi)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(92, 92, 92))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(171, 171, 171)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(nollaHypoteesiOnYhtaKuin1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(kaKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(varKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pKentta, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(suuntaValikko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(kaOnYhtaKuin1)))
+                .addGap(32, 32, 32))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,9 +186,9 @@ public class NormaalinAineistonSyottoVarianssiTunnettu extends javax.swing.JFram
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addGap(8, 8, 8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jakaumanMaarite)
-                .addGap(25, 25, 25)
+                .addGap(27, 27, 27)
                 .addComponent(otsikko)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -169,8 +210,15 @@ public class NormaalinAineistonSyottoVarianssiTunnettu extends javax.swing.JFram
                     .addComponent(pKentta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nollaHypoteesiOnYhtaKuin)
                     .addComponent(nollahypoteesi, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(valmisNappi)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(suuntaValikko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nollaHypoteesiOnYhtaKuin1)
+                    .addComponent(kaOnYhtaKuin1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(valmisNappi)
+                    .addComponent(takaisin))
                 .addContainerGap())
         );
 
@@ -183,19 +231,30 @@ public class NormaalinAineistonSyottoVarianssiTunnettu extends javax.swing.JFram
 
     private void valmisNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valmisNappiActionPerformed
 
+        try {
+            double var = Double.parseDouble(varKentta.getText());
+            double p = Double.parseDouble(pKentta.getText());
+            int n = Integer.parseInt(nKentta.getText());
+            double ka = Double.parseDouble(kaKentta.getText());
+        } catch (final NumberFormatException e) {
+            new UlinaRuutuNormaalille().setVisible(true);
+        }
+
         if (Double.parseDouble(kaKentta.getText()) <= 0
-                || Double.parseDouble(varKentta.getText()) < 0
-                || Double.parseDouble(pKentta.getText()) < 0
-                || Integer.parseInt(nKentta.getText()) < 1) {
-            new UlinaRuutu().setVisible(true);
+                || Double.parseDouble(varKentta.getText()) <= 0
+                || Double.parseDouble(pKentta.getText()) <= 0
+                || Integer.parseInt(nKentta.getText()) < 1
+                || suuntaValikko.getSelectedItem().equals(" ")) {
+            new UlinaRuutuNormaalille().setVisible(true);
         } else {
 
-            NormaalinAineistonTulokset tulokset = new NormaalinAineistonTulokset();
+            NormaaliTulokset tulokset = new NormaaliTulokset();
 
             tulokset.tulosta(Double.parseDouble(kaKentta.getText()),
                     Integer.parseInt(nKentta.getText()),
                     Double.parseDouble(pKentta.getText()),
                     Double.parseDouble(varKentta.getText()),
+                    suuntaValikko.getSelectedItem().toString(),
                     "Odotusarvo (varianssi tunnettu)");
 
             tulokset.setVisible(true);
@@ -219,6 +278,11 @@ public class NormaalinAineistonSyottoVarianssiTunnettu extends javax.swing.JFram
         // TODO add your handling code here:
     }//GEN-LAST:event_nKenttaActionPerformed
 
+    private void takaisinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_takaisinActionPerformed
+        setDefaultCloseOperation(NormaalinSyottoVarianssiTunnettu.DISPOSE_ON_CLOSE);
+        this.dispose();
+    }//GEN-LAST:event_takaisinActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -236,14 +300,46 @@ public class NormaalinAineistonSyottoVarianssiTunnettu extends javax.swing.JFram
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NormaalinAineistonSyottoVarianssiTunnettu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NormaalinSyottoVarianssiTunnettu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NormaalinAineistonSyottoVarianssiTunnettu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NormaalinSyottoVarianssiTunnettu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NormaalinAineistonSyottoVarianssiTunnettu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NormaalinSyottoVarianssiTunnettu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NormaalinAineistonSyottoVarianssiTunnettu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NormaalinSyottoVarianssiTunnettu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -280,7 +376,7 @@ public class NormaalinAineistonSyottoVarianssiTunnettu extends javax.swing.JFram
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NormaalinAineistonSyottoVarianssiTunnettu().setVisible(true);
+                new NormaalinSyottoVarianssiTunnettu().setVisible(true);
             }
         });
     }
@@ -292,13 +388,17 @@ public class NormaalinAineistonSyottoVarianssiTunnettu extends javax.swing.JFram
     private javax.swing.JLabel kOnYhtaKuin1;
     private javax.swing.JTextField kaKentta;
     private javax.swing.JLabel kaOnYhtaKuin;
+    private javax.swing.JLabel kaOnYhtaKuin1;
     private javax.swing.JTextField nKentta;
     private javax.swing.JLabel nollaHypoteesiOnYhtaKuin;
+    private javax.swing.JLabel nollaHypoteesiOnYhtaKuin1;
     private javax.swing.JLabel nollahypoteesi;
     private javax.swing.JLabel otoskeskiarvo;
     private javax.swing.JLabel otoskoko;
     private javax.swing.JLabel otsikko;
     private javax.swing.JTextField pKentta;
+    private javax.swing.JComboBox<String> suuntaValikko;
+    private javax.swing.JButton takaisin;
     private javax.swing.JButton valmisNappi;
     private javax.swing.JTextField varKentta;
     private javax.swing.JLabel varOnYhtaKuin;

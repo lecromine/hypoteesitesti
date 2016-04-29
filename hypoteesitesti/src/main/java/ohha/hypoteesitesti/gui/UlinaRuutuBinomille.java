@@ -1,12 +1,10 @@
 
 package ohha.hypoteesitesti.gui;
 
-import static com.sun.xml.internal.ws.streaming.XMLStreamReaderUtil.close;
 
+public class UlinaRuutuBinomille extends javax.swing.JFrame {
 
-public class UlinaRuutu extends javax.swing.JFrame {
-
-    public UlinaRuutu() {
+    public UlinaRuutuBinomille() {
         initComponents();
     }
 
@@ -22,14 +20,19 @@ public class UlinaRuutu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel1.setText("Jokin syötteistä ei kelpaa. Yritä uudelleen.");
 
+        jLabel2.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel2.setText("Otoskoko n > 0");
 
+        jLabel3.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel3.setText("Onnistumisten lukumäärä 0 < k < n tai k = 0");
 
+        jLabel4.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel4.setText("Parametri 0 < p < 1");
 
+        ok.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         ok.setText("Ok");
         ok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,7 +52,7 @@ public class UlinaRuutu extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -64,14 +67,14 @@ public class UlinaRuutu extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
                 .addComponent(ok)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okActionPerformed
-        setDefaultCloseOperation(UlinaRuutu.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(UlinaRuutuBinomille.DISPOSE_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_okActionPerformed
 
@@ -92,14 +95,17 @@ public class UlinaRuutu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UlinaRuutu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UlinaRuutuBinomille.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UlinaRuutu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UlinaRuutuBinomille.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UlinaRuutu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UlinaRuutuBinomille.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UlinaRuutu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UlinaRuutuBinomille.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

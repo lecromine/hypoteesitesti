@@ -1,9 +1,9 @@
 
 package ohha.hypoteesitesti.gui;
 
-public class NormaaliParametriTestinValinta extends javax.swing.JFrame {
+public class NormaaliTestinValinta extends javax.swing.JFrame {
 
-    public NormaaliParametriTestinValinta() {
+    public NormaaliTestinValinta() {
         initComponents();
     }
 
@@ -21,14 +21,17 @@ public class NormaaliParametriTestinValinta extends javax.swing.JFrame {
         odotusarvoVarianssiTuntematon = new javax.swing.JButton();
         odotusarvoVarianssiTunnettu = new javax.swing.JButton();
         varianssi = new javax.swing.JButton();
+        alkuun = new javax.swing.JButton();
 
         jRadioButton2.setText("jRadioButton2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Valitse testattava parametri");
 
+        odotusarvoVarianssiTuntematon.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         odotusarvoVarianssiTuntematon.setText("Odotusarvo (varianssi tuntematon)");
         odotusarvoVarianssiTuntematon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -36,6 +39,7 @@ public class NormaaliParametriTestinValinta extends javax.swing.JFrame {
             }
         });
 
+        odotusarvoVarianssiTunnettu.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         odotusarvoVarianssiTunnettu.setText("Odotusarvo (varianssi tunnettu)");
         odotusarvoVarianssiTunnettu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -48,6 +52,7 @@ public class NormaaliParametriTestinValinta extends javax.swing.JFrame {
             }
         });
 
+        varianssi.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         varianssi.setText("Varianssi");
         varianssi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,21 +60,27 @@ public class NormaaliParametriTestinValinta extends javax.swing.JFrame {
             }
         });
 
+        alkuun.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        alkuun.setText("Takaisin");
+        alkuun.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alkuunActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(89, 89, 89)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(odotusarvoVarianssiTuntematon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(odotusarvoVarianssiTunnettu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(varianssi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addGap(86, 86, 86)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(odotusarvoVarianssiTuntematon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(odotusarvoVarianssiTunnettu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(varianssi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(alkuun, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -82,18 +93,20 @@ public class NormaaliParametriTestinValinta extends javax.swing.JFrame {
                 .addComponent(odotusarvoVarianssiTunnettu)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(varianssi)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(alkuun)
+                .addGap(26, 26, 26))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void odotusarvoVarianssiTuntematonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odotusarvoVarianssiTuntematonActionPerformed
-        new NormaalinAineistonSyottoVarianssiTuntematon().setVisible(true);
+        new NormaalinSyottoVarianssiTuntematon().setVisible(true);
     }//GEN-LAST:event_odotusarvoVarianssiTuntematonActionPerformed
 
     private void odotusarvoVarianssiTunnettuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odotusarvoVarianssiTunnettuActionPerformed
-        new NormaalinAineistonSyottoVarianssiTunnettu().setVisible(true);
+        new NormaalinSyottoVarianssiTunnettu().setVisible(true);
     }//GEN-LAST:event_odotusarvoVarianssiTunnettuActionPerformed
 
     private void odotusarvoVarianssiTunnettuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_odotusarvoVarianssiTunnettuMouseClicked
@@ -101,8 +114,13 @@ public class NormaaliParametriTestinValinta extends javax.swing.JFrame {
     }//GEN-LAST:event_odotusarvoVarianssiTunnettuMouseClicked
 
     private void varianssiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varianssiActionPerformed
-        new NormaalinAineistonSyottoVarianssi().setVisible(true);
+        new NormaalinSyottoVarianssi().setVisible(true);
     }//GEN-LAST:event_varianssiActionPerformed
+
+    private void alkuunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alkuunActionPerformed
+        setDefaultCloseOperation(NormaaliTestinValinta.DISPOSE_ON_CLOSE);
+        this.dispose();
+    }//GEN-LAST:event_alkuunActionPerformed
 
     /**
      * @param args the command line arguments
@@ -121,14 +139,22 @@ public class NormaaliParametriTestinValinta extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NormaaliParametriTestinValinta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NormaaliTestinValinta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NormaaliParametriTestinValinta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NormaaliTestinValinta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NormaaliParametriTestinValinta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NormaaliTestinValinta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NormaaliParametriTestinValinta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NormaaliTestinValinta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -141,12 +167,13 @@ public class NormaaliParametriTestinValinta extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NormaaliParametriTestinValinta().setVisible(true);
+                new NormaaliTestinValinta().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton alkuun;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;

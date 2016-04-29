@@ -25,9 +25,11 @@ public class TestinValinta extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Valitse testi");
 
+        binomiJakaumaNappi.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         binomiJakaumaNappi.setText("Binomitesti");
         binomiJakaumaNappi.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -40,6 +42,7 @@ public class TestinValinta extends javax.swing.JFrame {
             }
         });
 
+        normaaliJakaumaNappi.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         normaaliJakaumaNappi.setText("Normaalijakauman testit");
         normaaliJakaumaNappi.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -56,17 +59,13 @@ public class TestinValinta extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(108, 108, 108)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(normaaliJakaumaNappi, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
-                            .addComponent(binomiJakaumaNappi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addComponent(jLabel1)))
-                .addContainerGap(115, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(113, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(normaaliJakaumaNappi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(binomiJakaumaNappi, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(110, 110, 110))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,18 +76,18 @@ public class TestinValinta extends javax.swing.JFrame {
                 .addComponent(binomiJakaumaNappi)
                 .addGap(18, 18, 18)
                 .addComponent(normaaliJakaumaNappi)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void binomiJakaumaNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_binomiJakaumaNappiActionPerformed
-        new BinomiAineistonSyotto().setVisible(true);
+        new BinomiSyotto().setVisible(true);
     }//GEN-LAST:event_binomiJakaumaNappiActionPerformed
 
     private void normaaliJakaumaNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_normaaliJakaumaNappiActionPerformed
-        new NormaaliParametriTestinValinta().setVisible(true);
+        new NormaaliTestinValinta().setVisible(true);
     }//GEN-LAST:event_normaaliJakaumaNappiActionPerformed
 
     private void binomiJakaumaNappiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_binomiJakaumaNappiMouseClicked
