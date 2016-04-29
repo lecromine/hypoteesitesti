@@ -12,3 +12,8 @@ Päivä | Tunnit | Kuvaus
 12.04.2016 | 5h | Normaalijakauman ohjelmalogiikan koodailua, GUIn rakentamista
 13.04.2016 | 4h | -ll-
 14.04.2016 | 3h | Javadoc, pit, checkstyle, uusi luokkakaavio, GUIn pohtimista
+21.04.2016 | 5h | Koodailua
+22.04.2016 | 5h | Deadlinen vaatimusten täyttämistä
+27.04.2016 | 3h | Koodin ja lisäominaisuuksien lisäämisen pohdiskelemista
+28.04.2016 | 4h | Koodailua
+29.04.2016 | 5h | Deadlinen vaatimusten täyttämistä, koodin hienosäätöä ja selkeyttämistä
