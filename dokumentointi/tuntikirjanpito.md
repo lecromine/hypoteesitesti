@@ -16,4 +16,4 @@ Päivä | Tunnit | Kuvaus
 22.04.2016 | 5h | Deadlinen vaatimusten täyttämistä
 27.04.2016 | 3h | Koodin ja lisäominaisuuksien lisäämisen pohdiskelemista
 28.04.2016 | 4h | Koodailua
-29.04.2016 | 5h | Deadlinen vaatimusten täyttämistä, koodin hienosäätöä ja selkeyttämistä
+29.04.2016 | 8h | Deadlinen vaatimusten täyttämistä, koodin hienosäätöä, testien lisäämistä
