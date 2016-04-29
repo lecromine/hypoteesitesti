@@ -43,7 +43,7 @@ public class TestisuureTest {
         Testisuure testisuure = new Testisuure();
 
         if ((testisuure.zTesti(10, 3, 1, 0, 3) > 0.00001)) {
-            fail("parvo " + testisuure.zTesti(10, 3, 1, 0, 3) + " z " + testisuure.getz());
+            fail("parvo " + testisuure.zTesti(10, 3, 1, 0, 3));
         }
 
         testisuure.zTesti(10, 3, 1, 1, 3);
@@ -76,11 +76,11 @@ public class TestisuureTest {
         Testisuure testisuure = new Testisuure();
 
         if (testisuure.tTesti(100, 6, 0.2, 7, 3) > 0.0001) {
-            fail("p arvo " + testisuure.tTesti(100, 6, 0.2, 7, 3) + " t = " + testisuure.gett());
+            fail("p arvo " + testisuure.tTesti(100, 6, 0.2, 7, 3));
         }
 
         if (Math.round(testisuure.tTesti(10, 4, 0.5, 3.5, 3) * 1000.0) / 1000.0 != 0.012) {
-            fail("p arvo " + testisuure.tTesti(100, 6, 0.2, 7, 3) + " t = " + testisuure.gett());
+            fail("p arvo " + testisuure.tTesti(100, 6, 0.2, 7, 3));
         }
 
     }

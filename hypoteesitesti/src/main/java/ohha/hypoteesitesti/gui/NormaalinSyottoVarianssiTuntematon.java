@@ -257,7 +257,7 @@ public class NormaalinSyottoVarianssiTuntematon extends javax.swing.JFrame {
             new UlinaRuutuBinomille().setVisible(true);
         } else {
 
-            NormaaliTulokset tulokset = new NormaaliTulokset();
+            NormaalinTulokset tulokset = new NormaalinTulokset();
 
             tulokset.tulosta(Double.parseDouble(kaKentta.getText()),
                     Integer.parseInt(nKentta.getText()),

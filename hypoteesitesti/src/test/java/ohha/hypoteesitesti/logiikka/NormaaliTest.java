@@ -78,12 +78,12 @@ public class NormaaliTest {
     public void OdotusarvoTest() {
         Normaali normaali = new Normaali();
 
-        if (normaali.Odotusarvo(100, 6, 0.2, 3, 7) > 0.0001) {
-            fail("p arvo " + normaali.Odotusarvo(100, 6, 0.2, 3, 7));
+        if (normaali.odotusarvo(100, 6, 0.2, 3, 7) > 0.0001) {
+            fail("p arvo " + normaali.odotusarvo(100, 6, 0.2, 3, 7));
         }
 
-        if (Math.round(normaali.Odotusarvo(10, 4, 0.5, 3.5, 3) * 1000.0) / 1000.0 != 0.012) {
-            fail("p arvo " + normaali.Odotusarvo(10, 4, 0.5, 3.5, 3));
+        if (Math.round(normaali.odotusarvo(10, 4, 0.5, 3.5, 3) * 1000.0) / 1000.0 != 0.012) {
+            fail("p arvo " + normaali.odotusarvo(10, 4, 0.5, 3.5, 3));
         }
 
     }

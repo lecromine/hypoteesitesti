@@ -1,15 +1,16 @@
 package ohha.hypoteesitesti.logiikka;
 
-/**
- * PArvonHakija on yhteydessä Testaajaan sekä jakaumia edustaviin luokkiin.
- * Lisäksi se välittää saadun p-arvon mainille.
- *
- * @author Lecromine
- */
 public class Testaaja {
 
     public double parvo;
 
+    /**
+     * Testaaja on yhteydessä Normaaliin ja Binomiin (luokkia). Lisäksi se
+     * välittää saadun p-arvon mainille.
+     *
+     * @author Lecromine
+     */
+    
     public Testaaja() {
         this.parvo = 0;
     }
@@ -38,6 +39,7 @@ public class Testaaja {
      * @param ka otoskeskiarvo
      * @param s keskihajonta
      * @param p hypoteesi odotusarvosta
+     * @param suuntaNumero  kertoo tehdäänkö esim. kaksisuuntainen testi
      * @param testi lukuarvona 1, 2 tai 3. Kertoo, mikä testi ajetaan:
      * odotusarvon testi, kun varianssi on tunnettu/tuntematon, vai varianssin
      * testi.

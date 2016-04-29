@@ -197,7 +197,7 @@ public class NormaalinSyottoVarianssi extends javax.swing.JFrame {
 
         } else {
 
-            NormaaliTulokset tulokset = new NormaaliTulokset();
+            NormaalinTulokset tulokset = new NormaalinTulokset();
 
             tulokset.tulosta(-1,
                     Integer.parseInt(nKentta.getText()),

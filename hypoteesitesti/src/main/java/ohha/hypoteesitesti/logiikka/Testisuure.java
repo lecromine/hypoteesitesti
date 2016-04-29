@@ -4,10 +4,6 @@ import org.apache.commons.math3.distribution.ChiSquaredDistribution;
 import org.apache.commons.math3.distribution.NormalDistribution;
 import org.apache.commons.math3.distribution.TDistribution;
 
-/**
- * Tämä luokka sisältää t-jakauman, khii toiseen -jakauman ja
- * standardinormaalijakauman testaamisia varten.
- */
 public class Testisuure {
 
     double t;
@@ -15,12 +11,17 @@ public class Testisuure {
     double x;
     double parvo;
 
+    /**
+     * Tämä luokka sisältää t-jakauman, khii toiseen -jakauman ja
+     * standardinormaalijakauman testaamisia varten.
+     */
+    
     public Testisuure() {
 
     }
 
     /**
-     * Tekee testin t-jakaumaa käyttäen
+     * Tekee testin t-jakaumaa käyttäen.
      *
      * @param n otoskoko
      * @param ka otoskeskiarvo
@@ -58,7 +59,7 @@ public class Testisuure {
     }
 
     /**
-     * Tekee testin standardinormaalijakaumaa käyttäen
+     * Tekee testin standardinormaalijakaumaa käyttäen.
      *
      * @param n otoskoko
      * @param ka otoskeskiarvo
@@ -84,7 +85,6 @@ public class Testisuure {
          * 2: >
          * 3: =
          */
-        
         switch (suuntaNumero) {
             case 1:
                 parvo = 1 - standardinormaali.cumulativeProbability(z);
@@ -110,7 +110,7 @@ public class Testisuure {
     }
 
     /**
-     * Tekee testin khii2-jakaumaa käyttäen
+     * Tekee testin khii2-jakaumaa käyttäen.
      *
      * @param n otoskoko
      * @param p testattava arvo
@@ -126,22 +126,10 @@ public class Testisuure {
         ChiSquaredDistribution khii = new ChiSquaredDistribution(n - 1);
 
         x = (n - 1) * Math.pow(s, 2) / Math.pow(p, 2);
-        
+
         parvo = 1 - khii.cumulativeProbability(x);
         System.out.println(parvo);
         return parvo;
-    }
-
-    public double getx() {
-        return this.x;
-    }
-
-    public double getz() {
-        return this.z;
-    }
-
-    public double gett() {
-        return this.t;
     }
 
 }

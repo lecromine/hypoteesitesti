@@ -249,7 +249,7 @@ public class NormaalinSyottoVarianssiTunnettu extends javax.swing.JFrame {
             new UlinaRuutuNormaalille().setVisible(true);
         } else {
 
-            NormaaliTulokset tulokset = new NormaaliTulokset();
+            NormaalinTulokset tulokset = new NormaalinTulokset();
 
             tulokset.tulosta(Double.parseDouble(kaKentta.getText()),
                     Integer.parseInt(nKentta.getText()),

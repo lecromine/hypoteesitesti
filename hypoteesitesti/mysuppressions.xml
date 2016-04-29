@@ -5,14 +5,18 @@
     "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
 
 <suppressions>
-    <suppress files="BinomiAineistonSyotto.java" checks="[a-zA-Z0-9]*"/>
-    <suppress files="BinomiAineistonTulokset.java" checks="[a-zA-Z0-9]*"/>
-    <suppress files="NormaaliParametriTestinValinta.java" checks="[a-zA-Z0-9]*"/>
-    <suppress files="NormaalinAineistonSyottoVarianssi.java" checks="[a-zA-Z0-9]*"/>
-    <suppress files="NormaalinAineistonSyottoVarianssiTunnettu.java" checks="[a-zA-Z0-9]*"/>
-    <suppress files="NormaalinAineistonSyottoVarianssiTuntematon.java" checks="[a-zA-Z0-9]*"/>
-    <suppress files="NormaalinAineistonTulokset.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="BinomiSyotto.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="BinomiTulokset.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="NormaaliTestinValinta.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="NormaalinSyottoVarianssi.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="NormaalinSyottoVarianssiTunnettu.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="NormaalinSyottoVarianssiTuntematon.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="NormaalinTulokset.java" checks="[a-zA-Z0-9]*"/>
     <suppress files="TestinValinta.java" checks="[a-zA-Z0-9]*"/>
-    <suppress files="UlinaRuutu.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="UlinaRuutuBinomille.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="UlinaRuutuNormaalille.java" checks="[a-zA-Z0-9]*"/>
     <suppress files="Vikailmoitus.java" checks="[a-zA-Z0-9]*"/>
+
+    <suppress files="Main.java" checks="[a-zA-Z0-9]*"/>
+
 </suppressions>

@@ -1,10 +1,3 @@
-/**
- * Tämä luokka sisältää kaikki normaaliin jakaumaan liittyvät tiedot.
- * Testauslogiikka säilytetään joko täällä tai siirretään Testaajaan: riippuu
- * siitä, kuinka pitkä testistä tulee.
- *
- * @author Lecromine
- */
 package ohha.hypoteesitesti.logiikka;
 
 import ohha.hypoteesitesti.gui.Vikailmoitus;
@@ -14,11 +7,29 @@ public class Normaali {
     double parvo;
     public Testisuure testisuure = new Testisuure();
 
+    /**
+     * Tämä luokka sisältää kaikki normaaliin jakaumaan liittyvät tiedot.
+     * Testauslogiikka säilytetään joko täällä tai siirretään Testaajaan:
+     * riippuu siitä, kuinka pitkä testistä tulee.
+     *
+     * @author Lecromine
+     */
+    
     public Normaali() {
     }
 
+    /**
+     * teeNormaaliTesti hakee normaalille jakaumalle p-arvot.
+     * @param n     otoskoko
+     * @param ka    otoskeskiarvo
+     * @param s     otoskeskihajonta
+     * @param p     nollahypoteesi
+     * @param suuntaNumero  kertoo, onko testi yksi- vai kaksisuuntainen
+     * @param testi         kertoo, suoritetaanko varianssin vai odotusarvon testi
+     * @return parvo
+     */
+    
     public double teeNormaaliTesti(int n, double ka, double s, double p, int suuntaNumero, int testi) {
-        
 
         if (n <= 0
                 || ka <= 0
@@ -31,13 +42,13 @@ public class Normaali {
 
             switch (testi) {
                 case 1:
-                    parvo = OdotusarvoVarianssiTunnettu(n, ka, s, p, suuntaNumero);
+                    parvo = odotusarvoVarianssiTunnettu(n, ka, s, p, suuntaNumero);
                     break;
                 case 2:
-                    parvo = Odotusarvo(n, ka, s, p, suuntaNumero);
+                    parvo = odotusarvo(n, ka, s, p, suuntaNumero);
                     break;
                 case 3:
-                    parvo = Varianssi(n, s, p);
+                    parvo = varianssi(n, s, p);
                     break;
                 default:
                     new Vikailmoitus().setVisible(true);
@@ -56,9 +67,11 @@ public class Normaali {
      * @param ka otoskeskiarvo
      * @param s otoskeskihajonta
      * @param p nollahypoteesia vastaava parametri
+     * @param suuntaNumero kertoo onko kyseessä esim. kaksisuuntainen testi
      * @return p-arvo
      */
-    public double Odotusarvo(int n, double ka, double s, double p, int suuntaNumero) {
+    
+    public double odotusarvo(int n, double ka, double s, double p, int suuntaNumero) {
 
         return testisuure.tTesti(n, ka, p, s, suuntaNumero);
     }
@@ -71,10 +84,10 @@ public class Normaali {
      * @param ka otoskeskiarvo
      * @param var varianssi
      * @param p nollahypoteesi odotusarvosta
-     * @param suuntaNumero  onko testi esim. kaksisuuntainen jne
+     * @param suuntaNumero onko testi esim. kaksisuuntainen jne
      * @return p-arvo
      */
-    public double OdotusarvoVarianssiTunnettu(int n, double ka, double var, double p, int suuntaNumero) {
+    public double odotusarvoVarianssiTunnettu(int n, double ka, double var, double p, int suuntaNumero) {
         return testisuure.zTesti(n, ka, p, var, suuntaNumero);
     }
 
@@ -86,7 +99,7 @@ public class Normaali {
      * @param p nollahypoteesia varianssin arvosta
      * @return parvo
      */
-    public double Varianssi(int n, double s, double p) {
+    public double varianssi(int n, double s, double p) {
         return testisuure.khiiToiseenTesti(n, s, p);
     }
 
