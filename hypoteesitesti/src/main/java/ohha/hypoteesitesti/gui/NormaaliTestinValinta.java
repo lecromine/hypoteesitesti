@@ -21,11 +21,11 @@ public class NormaaliTestinValinta extends javax.swing.JFrame {
         odotusarvoVarianssiTuntematon = new javax.swing.JButton();
         odotusarvoVarianssiTunnettu = new javax.swing.JButton();
         varianssi = new javax.swing.JButton();
-        alkuun = new javax.swing.JButton();
 
         jRadioButton2.setText("jRadioButton2");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setLocationByPlatform(true);
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -60,14 +60,6 @@ public class NormaaliTestinValinta extends javax.swing.JFrame {
             }
         });
 
-        alkuun.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        alkuun.setText("Takaisin");
-        alkuun.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                alkuunActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -78,8 +70,7 @@ public class NormaaliTestinValinta extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(odotusarvoVarianssiTuntematon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(odotusarvoVarianssiTunnettu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(varianssi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(alkuun, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(varianssi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(91, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -93,9 +84,7 @@ public class NormaaliTestinValinta extends javax.swing.JFrame {
                 .addComponent(odotusarvoVarianssiTunnettu)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(varianssi)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(alkuun)
-                .addGap(26, 26, 26))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();
@@ -116,11 +105,6 @@ public class NormaaliTestinValinta extends javax.swing.JFrame {
     private void varianssiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varianssiActionPerformed
         new NormaalinSyottoVarianssi().setVisible(true);
     }//GEN-LAST:event_varianssiActionPerformed
-
-    private void alkuunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alkuunActionPerformed
-        setDefaultCloseOperation(NormaaliTestinValinta.DISPOSE_ON_CLOSE);
-        this.dispose();
-    }//GEN-LAST:event_alkuunActionPerformed
 
     /**
      * @param args the command line arguments
@@ -173,7 +157,6 @@ public class NormaaliTestinValinta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton alkuun;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;

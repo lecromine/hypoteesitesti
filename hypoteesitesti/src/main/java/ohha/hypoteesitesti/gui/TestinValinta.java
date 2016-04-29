@@ -5,6 +5,7 @@ public class TestinValinta extends javax.swing.JFrame {
 
     public TestinValinta() {
         initComponents();
+
     }
 
     @SuppressWarnings("unchecked")
@@ -24,6 +25,7 @@ public class TestinValinta extends javax.swing.JFrame {
         jRadioButton2.setText("jRadioButton2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -76,7 +78,7 @@ public class TestinValinta extends javax.swing.JFrame {
                 .addComponent(binomiJakaumaNappi)
                 .addGap(18, 18, 18)
                 .addComponent(normaaliJakaumaNappi)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();
@@ -132,6 +134,8 @@ public class TestinValinta extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TestinValinta().setVisible(true);
+                
+                
             }
         });
     }

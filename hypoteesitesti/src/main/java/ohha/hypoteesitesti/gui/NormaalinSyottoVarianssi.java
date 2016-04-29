@@ -32,7 +32,8 @@ public class NormaalinSyottoVarianssi extends javax.swing.JFrame {
 
         suuntaValikko.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "<", ">", "=" }));
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setLocationByPlatform(true);
 
         otsikko.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         otsikko.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -202,7 +203,7 @@ public class NormaalinSyottoVarianssi extends javax.swing.JFrame {
                     Integer.parseInt(nKentta.getText()),
                     Double.parseDouble(pKentta.getText()),
                     Double.parseDouble(sKentta.getText()),
-                    suuntaValikko.getSelectedItem().toString(),
+                    "",
                     "Varianssi");
 
             tulokset.setVisible(true);

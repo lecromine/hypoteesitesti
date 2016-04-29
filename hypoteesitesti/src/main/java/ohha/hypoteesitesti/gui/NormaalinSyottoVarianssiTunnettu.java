@@ -33,7 +33,8 @@ public class NormaalinSyottoVarianssiTunnettu extends javax.swing.JFrame {
         nollaHypoteesiOnYhtaKuin1 = new javax.swing.JLabel();
         kaOnYhtaKuin1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setLocationByPlatform(true);
 
         otsikko.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         otsikko.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

@@ -20,18 +20,18 @@ public class BinomiTulokset extends javax.swing.JFrame {
         
         if (suunta.equals("<")) {
             suuntaNumero = 1;
-            suunta2.setText("<");
-            suunta1.setText(">");
+            suunta1.setText("<");
+            suunta2.setText(">");
             pValue1.setText(p + "");
         } else if (suunta.equals(">")) {
             suuntaNumero = 2;
-            suunta2.setText(">");
-            suunta1.setText("<");
+            suunta1.setText(">");
+            suunta2.setText("<");
             pValue1.setText(p + "");
         } else if (suunta.equals("=")) {
             suuntaNumero = 3;
-            suunta2.setText("=");
-            suunta1.setText("");
+            suunta1.setText("=");
+            suunta2.setText("");
             pValue1.setText("");
 
         }
@@ -97,7 +97,8 @@ public class BinomiTulokset extends javax.swing.JFrame {
         suunta3 = new javax.swing.JLabel();
         suunta4 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setLocationByPlatform(true);
 
         jLabel1.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel1.setText("Otoskoko n");
@@ -197,7 +198,7 @@ public class BinomiTulokset extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(nValue, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                                .addComponent(nValue, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
                                 .addComponent(pValue1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(pValue0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(parvoValue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))

@@ -33,7 +33,6 @@ public class Testisuure {
         if (s < 0 || n < 1 || ka < 0 || p < 0 || suuntaNumero < 1 || suuntaNumero > 3) {
             return -1;
         }
-        
 
         TDistribution tjakauma = new TDistribution(n - 1);
 
@@ -41,10 +40,10 @@ public class Testisuure {
 
         switch (suuntaNumero) {
             case 1:
-                parvo = 1 - tjakauma.cumulativeProbability(t);
+                parvo = tjakauma.cumulativeProbability(t);
                 break;
             case 2:
-                parvo = tjakauma.cumulativeProbability(t);
+                parvo = 1 - tjakauma.cumulativeProbability(t);
                 break;
             case 3:
                 parvo = 2 * (1 - tjakauma.cumulativeProbability(t));
@@ -78,7 +77,14 @@ public class Testisuure {
         z = (ka - p) / (Math.sqrt(var / n));
 
         System.out.println("z = " + z);
+        System.out.println("parvo " + parvo);
 
+        /**
+         * 1: <
+         * 2: >
+         * 3: =
+         */
+        
         switch (suuntaNumero) {
             case 1:
                 parvo = 1 - standardinormaali.cumulativeProbability(z);
@@ -120,9 +126,9 @@ public class Testisuure {
         ChiSquaredDistribution khii = new ChiSquaredDistribution(n - 1);
 
         x = (n - 1) * Math.pow(s, 2) / Math.pow(p, 2);
-
+        
         parvo = 1 - khii.cumulativeProbability(x);
-
+        System.out.println(parvo);
         return parvo;
     }
 

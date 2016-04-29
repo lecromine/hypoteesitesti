@@ -26,7 +26,8 @@ public class BinomiSyotto extends javax.swing.JFrame {
         suuntaValikko = new javax.swing.JComboBox<>();
         takaisin = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setLocationByPlatform(true);
 
         otsikko.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         otsikko.setText("Syötä keräämäsi binomijakautunut aineisto.");
@@ -178,11 +179,18 @@ public class BinomiSyotto extends javax.swing.JFrame {
     }//GEN-LAST:event_nKenttaActionPerformed
 
     private void valmisNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valmisNappiActionPerformed
+        
+        try {
+            double s = Double.parseDouble(kKentta.getText());
+            double p = Double.parseDouble(pKentta.getText());
+            int n = Integer.parseInt(nKentta.getText());
+        } catch (final NumberFormatException e) {
+            new UlinaRuutuBinomille().setVisible(true);
+             
+        }
 
-        if (nKentta.getText().isEmpty()
-                || kKentta.getText().isEmpty()
-                || pKentta.getText().isEmpty()
-                || Integer.parseInt(nKentta.getText()) < 1
+        
+        if (Integer.parseInt(nKentta.getText()) < 1
                 || Integer.parseInt(kKentta.getText()) < 0
                 || Double.parseDouble(pKentta.getText()) < 0
                 || Integer.parseInt(nKentta.getText()) < Integer.parseInt(kKentta.getText())

@@ -18,7 +18,8 @@ public class UlinaRuutuBinomille extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         ok = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setLocationByPlatform(true);
 
         jLabel1.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel1.setText("Jokin syötteistä ei kelpaa. Yritä uudelleen.");

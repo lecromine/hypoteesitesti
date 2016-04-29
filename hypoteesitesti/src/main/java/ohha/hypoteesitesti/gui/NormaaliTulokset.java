@@ -134,7 +134,8 @@ public class NormaaliTulokset extends javax.swing.JFrame {
         uudestaan = new javax.swing.JButton();
         suunta1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setLocationByPlatform(true);
 
         nollahypo.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         nollahypo.setText("Nollahypoteesi H\u2080");
