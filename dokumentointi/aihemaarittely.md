@@ -18,7 +18,7 @@ Lopuksi luokat lähettävät laskemansa p-arvon muuttujana (double) parvo. Arvo 
 
 ![Luokkakaavio](https://raw.githubusercontent.com/lecromine/hypoteesitesti/master/dokumentointi/luokkakaavio2.jpg "luokkakaavio")
 
-** Sekvenssikaaviot
+**Sekvenssikaaviot**
 
 ![Sekvenssikaavio 1](https://raw.githubusercontent.com/lecromine/hypoteesitesti/master/dokumentointi/sekvenssikaavio1.jpg "Sekvenssikaavio 1.")
 ![Sekvenssikaavio 2](https://raw.githubusercontent.com/lecromine/hypoteesitesti/master/dokumentointi/sekvenssikaavio2.jpg "Sekvenssikaavio 2.")
