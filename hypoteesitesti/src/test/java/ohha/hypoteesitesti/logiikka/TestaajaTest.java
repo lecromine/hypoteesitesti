@@ -51,4 +51,14 @@ public class TestaajaTest {
 //        assertTrue(testaaja.teeNormaaliTesti(100, 100, 0.25, -5, 3) == -1);
 
     }
+    
+    @Test
+    public void testaaBinomiTestia() {
+        Testaaja testaaja = new Testaaja();
+        
+        assertTrue(testaaja.binomiTesti(678, 444, 0.5, 1) < 0.00000001 );
+        assertTrue(testaaja.binomiTesti(100, 33, 0.3, 3) == 0.5856476042500937);
+        assertTrue(testaaja.binomiTesti(2255, 978, 0.4, 3) == 0.0011687071123500647);
+        
+    }
 }

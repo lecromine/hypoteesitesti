@@ -47,7 +47,7 @@ public class TestisuureTest {
         }
 
         testisuure.zTesti(10, 3, 1, 1, 3);
-        
+
         if (testisuure.z != 6.324555320336758) {
             fail("z = " + testisuure.z);
         }
@@ -61,7 +61,7 @@ public class TestisuureTest {
         if (testisuure.parvo != 0) {
             fail("1) p arvo = " + testisuure.parvo);
         }
-        
+
         if (testisuure.zTesti(10, 1, 0.5, 0, 3) != -1) {
             fail("2) parvo " + testisuure.parvo + " z " + testisuure.z);
         }
@@ -69,6 +69,42 @@ public class TestisuureTest {
         if (testisuure.zTesti(0, 1, 1, 1, 3) != -1) {
             fail("3) parvo " + testisuure.parvo);
         }
+    }
+
+    
+    @Test
+    public void tTestiTest1() {
+        Testisuure testisuure = new Testisuure();
+
+        assertTrue(testisuure.tTesti(100, 150.1, 144.4, 44, 3) == 0.1981760258961054);
+        assertTrue(testisuure.tTesti(958, 49, 40, 12, 3) < 0.0001);
+
+    }
+
+    @Test
+    public void tTestiTest2() {
+        Testisuure testisuure = new Testisuure();
+
+        assertTrue(testisuure.tTesti(100, 150.1, 144.4, 0, 3) == -1);
+        assertTrue(testisuure.tTesti(100, -20, 144.4, 44, 3) == -1);
+        assertTrue(testisuure.tTesti(0, 150.1, 144.4, 44, 4) == -1);
+        assertTrue(testisuure.tTesti(100, -1, 144.4, 44, 3) == -1);
+        assertTrue(testisuure.tTesti(100, 150.1, -1, 44, 3) == -1);
+        assertTrue(testisuure.tTesti(100, 150.1, 144.4, 44, 0) == -1);
+        assertTrue(testisuure.tTesti(100, 150.1, 144.4, -0.0000001, 3) == -1);
+
+    }
+    
+    @Test
+    public void khiiToiseenTestiTest() {
+        Testisuure testisuure = new Testisuure();
+        
+        assertTrue(testisuure.khiiToiseenTesti(100, 10, 10.5) == 0.7349240837128033);
+        assertTrue(testisuure.khiiToiseenTesti(100, 102.2, 99.5) == 0.3345715815798398);
+        assertTrue(testisuure.khiiToiseenTesti(0, 102.2, 99.5) == -1);
+        assertTrue(testisuure.khiiToiseenTesti(100, -0.001, 99.5) == -1);
+        
+        
     }
 
     @Test

@@ -252,7 +252,7 @@ public class NormaalinSyottoVarianssiTuntematon extends javax.swing.JFrame {
                 || Double.parseDouble(kaKentta.getText()) <= 0
                 || Double.parseDouble(sKentta.getText()) <= 0
                 || Double.parseDouble(pKentta.getText()) <= 0
-                || Integer.parseInt(nKentta.getText()) < 1
+                || Integer.parseInt(nKentta.getText()) <= 1
                 || suuntaValikko.getSelectedItem().equals(" ")) {
             new UlinaRuutuBinomille().setVisible(true);
         } else {

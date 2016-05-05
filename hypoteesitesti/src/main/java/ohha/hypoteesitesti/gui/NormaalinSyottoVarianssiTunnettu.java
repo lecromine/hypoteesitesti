@@ -244,7 +244,7 @@ public class NormaalinSyottoVarianssiTunnettu extends javax.swing.JFrame {
         if (Double.parseDouble(kaKentta.getText()) <= 0
                 || Double.parseDouble(varKentta.getText()) <= 0
                 || Double.parseDouble(pKentta.getText()) <= 0
-                || Integer.parseInt(nKentta.getText()) < 1
+                || Integer.parseInt(nKentta.getText()) <= 1
                 || suuntaValikko.getSelectedItem().equals(" ")) {
             new UlinaRuutuNormaalille().setVisible(true);
         } else {

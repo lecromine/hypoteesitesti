@@ -192,7 +192,7 @@ public class NormaalinSyottoVarianssi extends javax.swing.JFrame {
                 || nKentta.getText().isEmpty() == true
                 || Double.parseDouble(sKentta.getText()) <= 0
                 || Double.parseDouble(pKentta.getText()) <= 0
-                || Integer.parseInt(nKentta.getText()) < 1) {
+                || Integer.parseInt(nKentta.getText()) <= 1) {
             new UlinaRuutuNormaalille().setVisible(true);
 
         } else {

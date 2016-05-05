@@ -27,7 +27,7 @@ public class UlinaRuutuNormaalille extends javax.swing.JFrame {
         jLabel1.setText("Jokin syötteistä ei kelpaa. Yritä uudelleen.");
 
         jLabel2.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        jLabel2.setText("Otoskoko n > 0");
+        jLabel2.setText("Otoskoko n > 1");
 
         jLabel3.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel3.setText("Otoskeskiarvo Y\u0305 > 0");

@@ -6,9 +6,13 @@ import org.apache.commons.math3.stat.inference.BinomialTest;
 public class Binomi {
 
     double parvo;
+    BinomialTest binomi = new BinomialTest();
 
     /**
      * teeTesti suorittaa testin.
+     *
+     * Jos parametri p = 0.5, on kyseessä sign -testi (kaksisuuntainen tapaus).
+     * Muutoin tehdään binomitesti.
      *
      * @param n diskreetin aineiston otoskoko
      * @param k diskreetin aineiston onnistumisten lukumäärä
@@ -25,9 +29,9 @@ public class Binomi {
             return -1;
         } else if (k > n) {
             return -1;
-        } else if (p < 0) {
+        } else if (p <= 0) {
             return -1;
-        } else if (p > 1) {
+        } else if (p >= 1) {
             return -1;
         } else if (suunta < 1) {
             return -1;
@@ -35,7 +39,7 @@ public class Binomi {
             return -1;
         } else {
 
-            BinomialTest binomi = new BinomialTest();
+            parvo = 0;
 
             switch (suunta) {
                 case 1:
@@ -45,7 +49,11 @@ public class Binomi {
                     parvo = binomi.binomialTest(n, k, p, AlternativeHypothesis.LESS_THAN);
                     break;
                 case 3:
-                    parvo = binomi.binomialTest(n, k, p, AlternativeHypothesis.TWO_SIDED);
+                    if (p == 0.5) {
+                        parvo = binomi.binomialTest(n, k, p, AlternativeHypothesis.TWO_SIDED);
+                    } else {
+                        parvo = binomiTestiYleisesti(n, k, p);
+                    }
                     break;
                 default:
                     break;
@@ -54,4 +62,29 @@ public class Binomi {
             return parvo;
         }
     }
+
+    /**
+     * Tämä metodi ajetaan silloin, kun parametri p != 0.5, sillä
+     * math3-kirjaston binomitesti TWO_SIDED -tapauksessa tuottaa vääriä arvoja.
+     *
+     * @param n     otoskoko
+     * @param k     onnistumisten lkm
+     * @param p     parametri
+     * @return  parvo
+     */
+    public double binomiTestiYleisesti(int n, int k, double p) {
+
+        double odotusarvo = n * p;
+
+        int alaraja = (int) odotusarvo - Math.abs(k - (int) odotusarvo);
+        int ylaraja = (int) odotusarvo + Math.abs(k - (int) odotusarvo);
+
+        parvo = binomi.binomialTest(n, ylaraja, p, AlternativeHypothesis.GREATER_THAN)
+                + binomi.binomialTest(n, alaraja, p, AlternativeHypothesis.LESS_THAN);
+
+        System.out.println("parvo " + parvo);
+
+        return parvo;
+    }
+
 }

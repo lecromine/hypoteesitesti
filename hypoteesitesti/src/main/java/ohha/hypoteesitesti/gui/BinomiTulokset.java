@@ -37,7 +37,7 @@ public class BinomiTulokset extends javax.swing.JFrame {
         }
         
         Testaaja testaaja = new Testaaja();
-        double parvo = testaaja.teeBinomiTesti(n, k, p, suuntaNumero);
+        double parvo = testaaja.binomiTesti(n, k, p, suuntaNumero);
         parvoValue.setText("" + df.format(parvo));
 
         if (parvo < 0.1) {

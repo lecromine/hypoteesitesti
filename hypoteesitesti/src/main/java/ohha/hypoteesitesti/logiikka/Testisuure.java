@@ -31,7 +31,7 @@ public class Testisuure {
      * @return parvo
      */
     public double tTesti(int n, double ka, double p, double s, int suuntaNumero) {
-        if (s < 0 || n < 1 || ka < 0 || p < 0 || suuntaNumero < 1 || suuntaNumero > 3) {
+        if (s <= 0 || n <= 1 || ka < 0 || p < 0 || suuntaNumero < 1 || suuntaNumero > 3) {
             return -1;
         }
 
@@ -54,6 +54,7 @@ public class Testisuure {
                 break;
 
         }
+        
 
         return parvo;
     }
@@ -69,16 +70,13 @@ public class Testisuure {
      * @return parvo
      */
     public double zTesti(int n, double ka, double p, double var, int suuntaNumero) {
-        if (p <= 0 || var <= 0 || n < 1 || ka <= 0 || suuntaNumero < 1 || suuntaNumero > 3) {
+        if (p <= 0 || var <= 0 || n <= 1 || ka <= 0 || suuntaNumero < 1 || suuntaNumero > 3) {
             return -1;
         }
 
         NormalDistribution standardinormaali = new NormalDistribution(0, 1);
 
         z = (ka - p) / (Math.sqrt(var / n));
-
-        System.out.println("z = " + z);
-        System.out.println("parvo " + parvo);
 
         /**
          * 1: <
@@ -119,7 +117,7 @@ public class Testisuure {
      */
     public double khiiToiseenTesti(int n, double s, double p) {
 
-        if (n < 1 || p < 0 || s < 0) {
+        if (n <= 1 || p < 0 || s < 0) {
             return -1;
         }
 
@@ -128,7 +126,6 @@ public class Testisuure {
         x = (n - 1) * Math.pow(s, 2) / Math.pow(p, 2);
 
         parvo = 1 - khii.cumulativeProbability(x);
-        System.out.println(parvo);
         return parvo;
     }
 

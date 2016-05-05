@@ -27,7 +27,7 @@ public class Testaaja {
      * vai kaksisuuntainen
      * @return p-arvo
      */
-    public double teeBinomiTesti(int n, int k, double p, int suuntaNumero) {
+    public double binomiTesti(int n, int k, double p, int suuntaNumero) {
         Binomi binomi = new Binomi();
         return binomi.teeBinomiTesti(n, k, p, suuntaNumero);
     }

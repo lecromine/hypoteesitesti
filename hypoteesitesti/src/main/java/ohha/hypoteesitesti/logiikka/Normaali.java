@@ -31,7 +31,7 @@ public class Normaali {
     
     public double teeNormaaliTesti(int n, double ka, double s, double p, int suuntaNumero, int testi) {
 
-        if (n <= 0
+        if (n <= 1
                 || ka <= 0
                 || s <= 0
                 || p <= 0

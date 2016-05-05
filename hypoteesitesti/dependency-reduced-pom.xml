@@ -20,10 +20,16 @@
         <version>1.1.8</version>
         <configuration>
           <targetClasses>
-            <param>ohha.hypoteesitesti.logiikka.*</param>
+            <param>ohha.hypoteesitesti.logiikka.Binomi</param>
+            <param>ohha.hypoteesitesti.logiikka.Normaali</param>
+            <param>ohha.hypoteesitesti.logiikka.Testaaja</param>
+            <param>ohha.hypoteesitesti.logiikka.Testisuure</param>
           </targetClasses>
           <targetTests>
-            <param>ohha.hypoteesitesti.logiikka.*</param>
+            <param>ohha.hypoteesitesti.logiikka.BinomiTest</param>
+            <param>ohha.hypoteesitesti.logiikka.NormaaliTest</param>
+            <param>ohha.hypoteesitesti.logiikka.TestaajaTest</param>
+            <param>ohha.hypoteesitesti.logiikka.TestisuureTest</param>
           </targetTests>
         </configuration>
       </plugin>

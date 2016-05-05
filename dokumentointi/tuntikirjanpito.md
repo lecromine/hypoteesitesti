@@ -17,3 +17,5 @@ Päivä | Tunnit | Kuvaus
 27.04.2016 | 3h | Koodin ja lisäominaisuuksien lisäämisen pohdiskelemista
 28.04.2016 | 4h | Koodailua
 29.04.2016 | 8h | Deadlinen vaatimusten täyttämistä, koodin hienosäätöä, testien lisäämistä
+02.05.2016 | 3h | Koodin debuggausta ja erään ison bugin havaitseminen + korjaaminen
+05.05.2016 | 8h | Testien viimeistelyä, sekvenssikaaviot sekä lopullinen palautus

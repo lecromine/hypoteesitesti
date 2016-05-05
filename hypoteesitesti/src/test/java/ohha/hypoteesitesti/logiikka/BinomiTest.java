@@ -65,7 +65,7 @@ public class BinomiTest {
             fail(binomi.teeBinomiTesti(100, 70, 0.5, 3) + " >= " + 0.0001);
         }
         
-        if (binomi.teeBinomiTesti(100, 70, 1, 3) > 0.0001) {
+        if (binomi.teeBinomiTesti(100, 70, 1, 3) != -1) {
             fail(binomi.teeBinomiTesti(100, 70, 0.5, 3) + " >= " + 0.0001);
         }        
         
