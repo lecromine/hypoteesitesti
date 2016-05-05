@@ -1,4 +1,4 @@
-** Testausdokumentaatio **
+**Testausdokumentaatio**
 
 Kaikki testit on kirjoitettu käsin. Testit on jaoteltu luokissa kahteen eri tyyppiin: sellaiset, joiden oletetaan menevän läpi, eli arvoksi saadaan jotain muuta kuin -1, ja sellaiset, joissa on tarkoituksella arvo rajojen ulkopuolelta (kuten esimerkiksi -20). 
 
